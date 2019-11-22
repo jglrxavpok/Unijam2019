@@ -23,6 +23,7 @@ public class MonsterMovementBehavior : MonoBehaviour {
     }
 
     // Update is called once per frame
+    // TODO: Time.deltaTime
     void Update() {
         Vector3 currentPlayerPosition = player.transform.position;
         Vector2 currentPlayerPosition2D = new Vector2(currentPlayerPosition.x, currentPlayerPosition.z);
