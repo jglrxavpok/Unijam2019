@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.UNetWeaver;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,21 +26,32 @@ public class MaledictionController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         if (!other.CompareTag("Player") || _alreadyTriggered) return;
-        foreach (var activable in activables) {
-            activable.Activate();
-            music.clip = clipAudio;
-            music.Play();
-        }
-        maledictionText.gameObject.SetActive(true);//On affiche le message
-        monster.transform.GetChild(0).gameObject.SetActive(true);//On affiche le monstre
-        monster.GetComponent<MonsterMovementBehavior>().InitPositions(500);//nombre de frames durant lesquelles le monstre est immobile
-        StartCoroutine(clearText()); //On supprime l'affichage du message après 5s
         _alreadyTriggered = true;
+        foreach (var activable in activables) { //On active tous les Activables
+            activable.Activate();
+        }
+        Log.Warning("Malédiction invoquée");
+        if (clipAudio) { //Si l'objet n'est ppas null
+            music.clip = clipAudio;
+            music.Play(); //On lance la musique
+        }
+        if(maledictionText)
+            maledictionText.gameObject.SetActive(true);//On affiche le message
+        if (monster) {
+            monster.transform.GetChild(0).gameObject.SetActive(true); //On affiche le monstre
+            monster.GetComponent<MonsterMovementBehavior>()
+                .InitPositions(500); //nombre de frames durant lesquelles le monstre est immobile
+        }
+
+        StartCoroutine(clearText()); //On supprime l'affichage du message après 5s
+        
     }
 
     private IEnumerator clearText() {
         yield return new WaitForSeconds(5); //Après 5s
-        monster.GetComponent<CapsuleCollider>().enabled = true;//On autorise le GameOver
-        maledictionText.gameObject.SetActive(false);//et on efface le message
+        if(monster)
+            monster.GetComponent<CapsuleCollider>().enabled = true;//On autorise le GameOver
+        if(maledictionText)
+            maledictionText.gameObject.SetActive(false);//et on efface le message
     }
 }
