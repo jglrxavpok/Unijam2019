@@ -65,3 +65,6 @@ Assets/fIIEts
 Assets/Art/Model3D/Blend
 *.blend
 *.blend1
+.idea/
+
+Library/
