@@ -22,6 +22,11 @@ public class MonsterMovementBehavior : MonoBehaviour {
     void Start() {
         player = playerController.gameObject;
         playerPositions.Clear();
+
+        // 5s d'avance
+        for (int i = 0; i < 60*5; i++) {
+            playerPositions.Add(new Vector2(transform.position.x, transform.position.z));
+        }
     }
 
     // Update is called once per frame
