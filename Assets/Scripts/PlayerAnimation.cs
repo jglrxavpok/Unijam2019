@@ -8,6 +8,5 @@ public class PlayerAnimation : MonoBehaviour {
     public void Update() {
         animator.SetBool("Dashing", controller.isDashing());
         animator.SetBool("Moving", controller.isDashing() || controller.isMoving());
-        // TODO: animation de mort
     }
 }

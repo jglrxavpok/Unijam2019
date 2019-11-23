@@ -31,6 +31,7 @@ public class ActivatorController : Activable {
     private MeshRenderer _meshRenderer;
     private AudioSource _source;
     private bool _active = false;
+    private int number_on_plate = 0;
 
     // Start is called before the first frame update
     void Start() {
@@ -65,7 +66,7 @@ public class ActivatorController : Activable {
     }
     
     private void OnTriggerEnter(Collider other) {
-        if (other.CompareTag("Player") && !_active && !locked) {
+        if ((other.CompareTag("Player") || other.CompareTag("Box")) && !_active && !locked) {
             _active = true;
             foreach (var activable in activables) {
                 activable.Activate();
@@ -80,7 +81,7 @@ public class ActivatorController : Activable {
     }
 
     private void OnCollisionEnter(Collision other) {
-        if (other.collider.CompareTag("Player") && !_active && !locked) {
+        if ((other.collider.CompareTag("Player") || other.collider.CompareTag("Box")) && !_active && !locked) {
             _active = true;
             foreach (var activable in activables) {
                 activable.Activate();
@@ -95,7 +96,7 @@ public class ActivatorController : Activable {
     }
 
     private void OnTriggerExit(Collider other) {
-        if (other.CompareTag("Player")) {
+        if (other.CompareTag("Player")|| other.CompareTag("Box")) {
             if (activeDuration > 0) {
                 StartCoroutine(ResetActive());
             }
@@ -103,7 +104,7 @@ public class ActivatorController : Activable {
     }
 
     private void OnCollisionExit(Collision other) {
-        if (other.collider.CompareTag("Player")) {
+        if (other.collider.CompareTag("Player") || other.collider.CompareTag("Box")) {
             if (activeDuration > 0) {
                 StartCoroutine(ResetActive());
             }
