@@ -17,7 +17,7 @@ public abstract class Activable : MonoBehaviour {
 
     public abstract void DeActivate(); //Fonction appellée quand la plaque se désactive
 }
-public class PressurePlateController : Activable {
+public class ActivatorController : Activable {
     public List<Activable> activables; //La liste des objets à activer
     public Material activeMaterial; //Le matériau de la plaque lorsqu'elle est activée (peut être null, dans ce cas la plaque ne change pas de matériau quand elle est activée)
     public Material lockedMaterial;
@@ -51,6 +51,9 @@ public class PressurePlateController : Activable {
     public override void DeActivate() {
         locked = true;
         _meshRenderer.material = lockedMaterial;
+        if (_active) {
+            StartCoroutine(ResetActive());
+        }
     }
     
     private void OnTriggerEnter(Collider other) {
@@ -100,7 +103,12 @@ public class PressurePlateController : Activable {
                 activable.DeActivate();
             }
             _active = false;
-            _meshRenderer.material = _unactiveMaterial;
+            if (locked) {
+                _meshRenderer.material = lockedMaterial;
+            }
+            else {
+                _meshRenderer.material = _unactiveMaterial;
+            }
             transform.Translate(0.05f * Vector3.up);
         }
     }
