@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MonsterMovementBehavior : MonoBehaviour {
-    public GameObject player;
+    public PlayerController playerController;
+    public float catchup = 1.0f;
     
     // nombre total de frames avant que le monstre bouge
     public int frameLagCount = 60 * 5; // 5s
@@ -13,12 +15,12 @@ public class MonsterMovementBehavior : MonoBehaviour {
 
     private List<Vector2> playerPositions = new List<Vector2>();
     
-    private Vector2 lastPlayerPosition;
-    
+    private bool wasDashing;
+    private GameObject player;
+
     // Start is called before the first frame update
     void Start() {
-        var position = player.transform.position;
-        lastPlayerPosition = new Vector2(position.x, position.z);
+        player = playerController.gameObject;
         playerPositions.Clear();
     }
 
@@ -27,27 +29,29 @@ public class MonsterMovementBehavior : MonoBehaviour {
     void Update() {
         Vector3 currentPlayerPosition = player.transform.position;
         Vector2 currentPlayerPosition2D = new Vector2(currentPlayerPosition.x, currentPlayerPosition.z);
+
+        int nPositionsPerFrame = 6;
         playerPositions.Add(currentPlayerPosition2D);
-        playerPositions.Add(new Vector2(currentPlayerPosition2D.x, currentPlayerPosition2D.y));
-        playerPositions.Add(new Vector2(currentPlayerPosition2D.x, currentPlayerPosition2D.y));
-        playerPositions.Add(new Vector2(currentPlayerPosition2D.x, currentPlayerPosition2D.y));
-        playerPositions.Add(new Vector2(currentPlayerPosition2D.x, currentPlayerPosition2D.y));
-        while (playerPositions.Count >= frameLagCount) { // ne pas dépasser un lag donné
+        for (int i = 0; i < nPositionsPerFrame-1; i++) {
+            playerPositions.Add(new Vector2(currentPlayerPosition2D.x, currentPlayerPosition2D.y));
+        }
+        while (playerPositions.Count >= frameLagCount*nPositionsPerFrame) { // ne pas dépasser un lag donné
             playerPositions.RemoveAt(0);
         }
 
-        float playerSpeed = (lastPlayerPosition - currentPlayerPosition2D).magnitude;
         int speed = 4;
-        if (playerSpeed > speedThreshold) {
-            speed = 20;
-            Debug.Log("Speeeed!");
+        if (!wasDashing && playerController.isDashing()) { // dash start
+            int aim = (int)(nPositionsPerFrame*catchup*60) /* rattrape "catchup" secondes dès le début du dash */;
+            if (aim < 0) {
+                aim = 0;
+            }
+
+            if (aim > 0) {
+                playerPositions.RemoveRange(0, Math.Min(aim, playerPositions.Count-1));
+            }
         }
 
-        lastPlayerPosition = currentPlayerPosition2D;
-        /*if (lag > 0) {
-            lag--;
-            return;
-        }*/
+        wasDashing = playerController.isDashing();
 
         if (playerPositions.Count == 0) {
             Debug.LogError("Plus de positions disponibles!");

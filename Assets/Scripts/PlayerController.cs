@@ -119,5 +119,9 @@ public class PlayerController : MonoBehaviour
                 timer++; 
             } 
         } 
-    } 
+    }
+
+    public bool isDashing() {
+        return timer > 0;
+    }
 }
