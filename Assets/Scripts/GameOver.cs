@@ -1,6 +1,5 @@
 ﻿using System;
 using DefaultNamespace;
-using Unity.UNetWeaver;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -18,8 +17,6 @@ public class GameOver : MonoBehaviour
 
     void TaskOnClickRetry() {
         SceneManager.LoadScene(SaveScene.saveScene);
-        Log.WarningMethod(SaveScene.saveScene);
-        //TODO : Respawning in the right scene
     }
 
     void TaskOnClickMainMenu()
