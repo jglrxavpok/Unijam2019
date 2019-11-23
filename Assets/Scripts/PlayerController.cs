@@ -9,7 +9,8 @@ public class PlayerController : MonoBehaviour
     private float deplacementDroit = 0.1f; 
     private float deplacementDiag; 
     private bool[] RightLeftUpDown= new bool[4]; 
-    private bool shiftClick = false; 
+    private bool shiftClick = false;
+    public Rigidbody body;
     private int timer = 0; 
 // Start is called before the first frame update 
     void Start() 
@@ -54,63 +55,66 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.LeftArrow)) 
         { 
             RightLeftUpDown[1] = false; 
-        } 
+        }
+    }
+
+    private void FixedUpdate() {
         if (RightLeftUpDown[0]) 
         { 
             if (RightLeftUpDown[2]) 
             { 
-                player.transform.rotation = Quaternion.AngleAxis(-45, new Vector3(0,1,0)); 
-                player.transform.Translate(deplacementDiag, 0, 0); 
+                player.transform.rotation = Quaternion.AngleAxis(45, new Vector3(0,1,0)); 
+                body.MovePosition(body.position + new Vector3(deplacementDiag,0,deplacementDiag)); 
             } 
             else if (RightLeftUpDown[3]) 
             { 
-                player.transform.rotation = Quaternion.AngleAxis(45, new Vector3(0,1,0)); 
-                player.transform.Translate(deplacementDiag, 0, 0); 
+                player.transform.rotation = Quaternion.AngleAxis(135, new Vector3(0,1,0)); 
+                body.MovePosition(body.position + new Vector3(deplacementDiag,0,-deplacementDiag));
             } 
             else 
             { 
-                player.transform.rotation = Quaternion.AngleAxis(0, new Vector3(0,1,0)); 
-                player.transform.Translate(deplacementDroit, 0, 0); 
+                player.transform.rotation = Quaternion.AngleAxis(90, new Vector3(0,1,0)); 
+                body.MovePosition(body.position + new Vector3(deplacementDroit,0,0)); 
             } 
         } 
         if (RightLeftUpDown[1]) 
         { 
             if (RightLeftUpDown[2]) 
             { 
-                player.transform.rotation = Quaternion.AngleAxis(-135, new Vector3(0,1,0)); 
-                player.transform.Translate(deplacementDiag, 0, 0); 
+                player.transform.rotation = Quaternion.AngleAxis(-45, new Vector3(0,1,0)); 
+                body.MovePosition(body.position + new Vector3(-deplacementDiag,0,deplacementDiag));
             } 
             else if (RightLeftUpDown[3]) 
             { 
-                player.transform.rotation = Quaternion.AngleAxis(135, new Vector3(0,1,0)); 
-                player.transform.Translate(deplacementDiag, 0, 0); 
+                player.transform.rotation = Quaternion.AngleAxis(-135, new Vector3(0,1,0)); 
+                body.MovePosition(body.position + new Vector3(-deplacementDiag,0,-deplacementDiag));
             } 
             else 
             { 
-                player.transform.rotation = Quaternion.AngleAxis(180, new Vector3(0,1,0)); 
-                player.transform.Translate(deplacementDroit, 0, 0); 
+                player.transform.rotation = Quaternion.AngleAxis(-90, new Vector3(0,1,0)); 
+                body.MovePosition(body.position + new Vector3(-deplacementDroit,0,0));
             } 
         } 
         if ((RightLeftUpDown[2]) && (!RightLeftUpDown[1]) && (!RightLeftUpDown[0])) 
         { 
-            player.transform.rotation = Quaternion.AngleAxis(-90, new Vector3(0,1,0)); 
-            player.transform.Translate(deplacementDroit, 0, 0); 
+            player.transform.rotation = Quaternion.AngleAxis(0, new Vector3(0,1,0)); 
+            body.MovePosition(body.position + new Vector3(0,0,deplacementDroit));
         } 
         if ((RightLeftUpDown[3]) && (!RightLeftUpDown[1]) && (!RightLeftUpDown[0])) 
         { 
-            player.transform.rotation = Quaternion.AngleAxis(90, new Vector3(0,1,0)); 
-            player.transform.Translate(deplacementDroit, 0, 0); 
+            player.transform.rotation = Quaternion.AngleAxis(180, new Vector3(0,1,0)); 
+            body.MovePosition(body.position + new Vector3(0,0,-deplacementDroit)); 
         } 
         if (Input.GetKeyDown(KeyCode.LeftShift)) { 
             if (!shiftClick) { 
                 shiftClick = true; 
-                deplacementDroit *= 15; 
+                deplacementDroit *= 5; 
                 deplacementDiag = Mathf.Sqrt((Mathf.Pow(deplacementDroit,2f))/2); 
             } 
         } 
         if (shiftClick ) { 
-            if (timer == 5) { 
-                deplacementDroit = deplacementDroit/15; 
+            if (timer == 6) { 
+                deplacementDroit = deplacementDroit/5; 
                 deplacementDiag = Mathf.Sqrt((Mathf.Pow(deplacementDroit,2f))/2); 
                 timer = 0; 
                 shiftClick = false; 
