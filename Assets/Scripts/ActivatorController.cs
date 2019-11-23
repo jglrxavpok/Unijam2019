@@ -32,7 +32,7 @@ public class ActivatorController : Activable {
     void Start() {
         _meshRenderer = gameObject.GetComponent<MeshRenderer>();
         _unactiveMaterial = _meshRenderer.material;
-        if (locked) {
+        if (locked && lockedMaterial) {
             _meshRenderer.material = lockedMaterial;
         }
     }
@@ -50,7 +50,10 @@ public class ActivatorController : Activable {
 
     public override void DeActivate() {
         locked = true;
-        _meshRenderer.material = lockedMaterial;
+        if (lockedMaterial) {
+            _meshRenderer.material = lockedMaterial;
+        }
+
         if (_active) {
             StartCoroutine(ResetActive());
         }
