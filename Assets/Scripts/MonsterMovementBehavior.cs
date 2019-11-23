@@ -24,6 +24,7 @@ public class MonsterMovementBehavior : MonoBehaviour {
 
     private float lerpAmount = 0f;
     public float lerpSpeed = 0.25f;
+    public float distanceThreshold = 0.01f;
 
     // Start is called before the first frame update
     void Start() {
@@ -42,9 +43,14 @@ public class MonsterMovementBehavior : MonoBehaviour {
         Vector2 currentPlayerPosition2D = new Vector2(currentPlayerPosition.x, currentPlayerPosition.z);
 
         int nPositionsPerFrame = 6;
-        playerPositions.Add(currentPlayerPosition2D);
-        for (int i = 0; i < nPositionsPerFrame-1; i++) {
-            playerPositions.Add(new Vector2(currentPlayerPosition2D.x, currentPlayerPosition2D.y));
+        Vector2 last = playerPositions.FindLast(x => true);
+        float deltaDistance = (last - currentPlayerPosition2D).magnitude;
+        Debug.Log(deltaDistance+" - "+distanceThreshold);
+        if (deltaDistance > distanceThreshold) { // on ajoute les nouvelles positions que si le joueur a bougé
+            playerPositions.Add(currentPlayerPosition2D);
+            for (int i = 0; i < nPositionsPerFrame-1; i++) {
+                playerPositions.Add(new Vector2(currentPlayerPosition2D.x, currentPlayerPosition2D.y));
+            }
         }
         
         if (!following) {
