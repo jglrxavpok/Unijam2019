@@ -1,14 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Cinematic : MonoBehaviour
 {
     public Animator animator;
+
     public GameObject camera;
+
+    public Image black;
+    Color tempColor;
 
     bool doWalk;
     bool doRotate;
+    bool transition;
 
     Quaternion fromRotation;
 
@@ -18,6 +24,9 @@ public class Cinematic : MonoBehaviour
     {
         doWalk = true;
         doRotate = false;
+        tempColor = black.color;
+        tempColor.a = 0;
+        black.color = tempColor;
     }
 
     void Update()
@@ -54,6 +63,12 @@ public class Cinematic : MonoBehaviour
                 doRotate = false;
             }
         }
+
+        if (transition)
+        {
+            tempColor.a += 0.25f * Time.deltaTime;
+            black.color = tempColor;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -62,6 +77,11 @@ public class Cinematic : MonoBehaviour
         {
             doWalk = false;
             animator.SetBool("stil", true);
+        }
+
+        if (other.CompareTag("fondu"))
+        {
+            transition = true;
         }
     }
 }

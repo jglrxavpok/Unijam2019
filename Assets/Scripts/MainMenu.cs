@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour
 
     void TaskOnClickPlay()
     {
-        SceneManager.LoadScene("Level_debut");
+        SceneManager.LoadScene("OpeningCinematic");
     }
 
     void TaskOnClickExit()
