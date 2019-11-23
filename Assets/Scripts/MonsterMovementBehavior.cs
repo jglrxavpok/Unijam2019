@@ -18,15 +18,21 @@ public class MonsterMovementBehavior : MonoBehaviour {
     private bool wasDashing;
     private GameObject player;
 
+    private bool following = false;
+    private Vector3 startPosition;
+    private Vector3 target;
+
+    private float lerpAmount = 0f;
+    public float lerpSpeed = 0.25f;
+
     // Start is called before the first frame update
     void Start() {
         player = playerController.gameObject;
-        playerPositions.Clear();
 
-        // 5s d'avance
-        for (int i = 0; i < 60*5; i++) {
-            playerPositions.Add(new Vector2(transform.position.x, transform.position.z));
-        }
+        startPosition = transform.position;
+        target = player.transform.position;
+        
+        playerPositions.Clear();
     }
 
     // Update is called once per frame
@@ -39,6 +45,19 @@ public class MonsterMovementBehavior : MonoBehaviour {
         playerPositions.Add(currentPlayerPosition2D);
         for (int i = 0; i < nPositionsPerFrame-1; i++) {
             playerPositions.Add(new Vector2(currentPlayerPosition2D.x, currentPlayerPosition2D.y));
+        }
+        
+        if (!following) {
+            target = playerPositions[0];
+            Vector3 delta = new Vector3(target.x, 0, target.y) - startPosition;
+            if (lerpAmount >= 1f) { // on est à destination
+                following = true;
+                Debug.Log("Lerp done");
+            } else { // on doit se rapprocher
+                lerpAmount += Time.deltaTime * lerpSpeed;
+                transform.position = startPosition + delta * lerpAmount;
+            }   
+            return;
         }
         while (playerPositions.Count >= frameLagCount*nPositionsPerFrame) { // ne pas dépasser un lag donné
             playerPositions.RemoveAt(0);
@@ -72,10 +91,12 @@ public class MonsterMovementBehavior : MonoBehaviour {
             // change l'angle que si on est pas à la même position qu'avant
             transform.rotation = Quaternion.LookRotation(deltaPosition, Vector3.up);
         }
-        
     }
 
     public void InitPositions(int loadSize) {
+        startPosition = transform.position;
+        target = player.transform.position;
+        
         Vector3 position = player.transform.position;
         Vector2 initialPosition = new Vector2(position.x, position.z);
         playerPositions.Clear();
