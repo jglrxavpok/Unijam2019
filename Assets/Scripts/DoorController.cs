@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * Ce script contrôle l'ouverture d'une porte
+ */
 public class DoorController : Activable {
-    public float deplacement = 2f;
-    public float speed = 10f;
-    public bool invertDirection = false;
-    
-    
+    public float deplacement = -1; //la distance après laquelle la porte est considérée ouverte, si négatif, la hauteur de la porte est est prise pour cette valeur 
+    public float speed = 10f; //la vitesse de déplacement de la porte pendant son ouverture
+    public bool invertDirection = false; //inverse la direction de déplacement de la porte pour son ouverture
+
+
     private bool _activated;
     private bool _move = false;
     private int _collisionCount = 0;
@@ -18,6 +21,9 @@ public class DoorController : Activable {
     // Start is called before the first frame update
     void Start() {
         _rigidbody = gameObject.GetComponent<Rigidbody>();
+        if (deplacement < 0) {
+            deplacement = transform.localScale.y;
+        }
     }
 
     // Update is called once per frame

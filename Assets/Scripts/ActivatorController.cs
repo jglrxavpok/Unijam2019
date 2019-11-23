@@ -32,7 +32,7 @@ public class ActivatorController : Activable {
     void Start() {
         _meshRenderer = gameObject.GetComponent<MeshRenderer>();
         _unactiveMaterial = _meshRenderer.material;
-        if (locked) {
+        if (locked && lockedMaterial) {
             _meshRenderer.material = lockedMaterial;
         }
     }
@@ -50,8 +50,11 @@ public class ActivatorController : Activable {
 
     public override void DeActivate() {
         locked = true;
-        _meshRenderer.material = lockedMaterial;
-        if (_active) {
+        if (lockedMaterial) {
+            _meshRenderer.material = lockedMaterial;
+        }
+
+        if (_active && activeDuration > 0) {
             StartCoroutine(ResetActive());
         }
     }
@@ -62,7 +65,7 @@ public class ActivatorController : Activable {
             foreach (var activable in activables) {
                 activable.Activate();
             }
-            transform.Translate(0.05f * Vector3.down);
+            transform.Translate(transform.localScale.y/2 * Vector3.down);
             if(activeMaterial)
                 _meshRenderer.material = activeMaterial;
         }
@@ -75,7 +78,7 @@ public class ActivatorController : Activable {
                 activable.Activate();
             }
             transform.Translate(0.05f * Vector3.down);
-            if(activeMaterial)
+            if(activeMaterial && !locked)
                 _meshRenderer.material = activeMaterial;
         }
     }
@@ -109,7 +112,7 @@ public class ActivatorController : Activable {
             else {
                 _meshRenderer.material = _unactiveMaterial;
             }
-            transform.Translate(0.05f * Vector3.up);
+            transform.Translate(transform.localScale.y/2 * Vector3.up);
         }
     }
 }

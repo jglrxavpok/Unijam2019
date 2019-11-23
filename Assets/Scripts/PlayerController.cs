@@ -3,20 +3,22 @@ using System.Collections;
 using System.Collections.Generic; 
 using System.Timers; 
 using UnityEngine; 
-public class PlayerController : MonoBehaviour 
-{ 
-    public GameObject player; 
-    private float deplacementDroit = 0.1f; 
-    private float deplacementDiag; 
-    private bool[] RightLeftUpDown= new bool[4]; 
-    private bool shiftClick = false;
-    public Rigidbody body;
-    private int timer = 0;
+public class PlayerController : MonoBehaviour {
+    public int dashDuration = 6;
+    public float dashSpeedMultiplier = 5f;
 
+    private GameObject player;
+    private Rigidbody body;
+    private float deplacementDroit = 0.1f;
+    private float deplacementDiag;
+    private bool[] RightLeftUpDown= new bool[4];
+    private bool shiftClick = false;
+    private int timer = 0;
     private bool moving;
 // Start is called before the first frame update 
-    void Start() 
-    { 
+    void Start() {
+        player = gameObject;
+        body = player.GetComponent<Rigidbody>();
         deplacementDiag = Mathf.Sqrt((Mathf.Pow(deplacementDroit,2f))/2); 
         RightLeftUpDown[0] = false; 
         RightLeftUpDown[1] = false; 
@@ -116,13 +118,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift)) { 
             if (!shiftClick) { 
                 shiftClick = true; 
-                deplacementDroit *= 5; 
+                deplacementDroit *= dashSpeedMultiplier; 
                 deplacementDiag = Mathf.Sqrt((Mathf.Pow(deplacementDroit,2f))/2); 
             } 
         } 
         if (shiftClick ) { 
-            if (timer == 6) { 
-                deplacementDroit = deplacementDroit/5; 
+            if (timer == dashDuration) { 
+                deplacementDroit = deplacementDroit/dashSpeedMultiplier;
                 deplacementDiag = Mathf.Sqrt((Mathf.Pow(deplacementDroit,2f))/2); 
                 timer = 0; 
                 shiftClick = false; 
