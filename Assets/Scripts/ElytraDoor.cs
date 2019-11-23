@@ -2,24 +2,21 @@
 using UnityEngine;
 
 public class ElytraDoor : MonoBehaviour {
+    private DoorController door;
     public Elytre leftElytra;
     public Elytre rightElytra;
-    private bool open;
-
-    private MeshRenderer mr;
+    private bool activated;
 
     public void Start() {
-        mr = gameObject.GetComponent<MeshRenderer>();
+        door = GetComponent<DoorController>();
     }
 
     public void Update() {
-        if (leftElytra.instrumentPlaying && rightElytra.instrumentPlaying) {
-            open = true;
-        } else {
-            open = false;
+        if (leftElytra.instrumentPlaying && rightElytra.instrumentPlaying && !activated) {
+            activated = true;
+            leftElytra.LockElytra();
+            rightElytra.LockElytra();
+            door.Activate();
         }
-        
-        // hide
-        mr.enabled = !open;
     }
 }
