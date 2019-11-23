@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4979388655454782900}
   - component: {fileID: 4979388655454782903}
   - component: {fileID: 4979388655454782902}
-  - component: {fileID: 4979388655454782889}
   - component: {fileID: 4979388655454782898}
   m_Layer: 0
   m_Name: PressurePlate
@@ -89,27 +88,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4979388655454782888}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &4979388655454782889
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4979388655454782888}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!114 &4979388655454782898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,4 +107,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activables:
   - {fileID: 0}
-  activeDuration: 1
+  activeMaterial: {fileID: 2100000, guid: de73af6e09073a143af87d733ae1c80b, type: 2}
+  activeDuration: -1
