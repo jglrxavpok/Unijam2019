@@ -10,7 +10,7 @@ public class DoorController : Activable {
     public float deplacement = -1; //la distance après laquelle la porte est considérée ouverte, si négatif, la hauteur de la porte est est prise pour cette valeur 
     public float speed = 10f; //la vitesse de déplacement de la porte pendant son ouverture
     public bool invertDirection = false; //inverse la direction de déplacement de la porte pour son ouverture
-
+    public AudioClip doorOpeningSound;
 
     private bool _activated;
     private bool _move = false;
@@ -18,8 +18,11 @@ public class DoorController : Activable {
     private float _deplacementEffectif;
 
     private Rigidbody _rigidbody;
+
+    private AudioSource _source;
     // Start is called before the first frame update
     void Start() {
+        _source = GetComponent<AudioSource>();
         _rigidbody = gameObject.GetComponent<Rigidbody>();
         if (deplacement < 0) {
             deplacement = transform.localScale.y;
@@ -42,6 +45,9 @@ public class DoorController : Activable {
     }
 
     public override void Activate() {
+        if (doorOpeningSound && _source) {
+            _source.PlayOneShot(doorOpeningSound, 2f);
+        }
         _activated = true;
         _move = true;
     }
