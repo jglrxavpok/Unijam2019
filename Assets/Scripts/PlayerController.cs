@@ -16,8 +16,9 @@ public class PlayerController : MonoBehaviour {
     private int timer = 0;
     private bool moving;
 // Start is called before the first frame update 
-    void Start() 
-    { 
+    void Start() {
+        player = gameObject;
+        body = player.GetComponent<Rigidbody>();
         deplacementDiag = Mathf.Sqrt((Mathf.Pow(deplacementDroit,2f))/2); 
         RightLeftUpDown[0] = false; 
         RightLeftUpDown[1] = false; 
