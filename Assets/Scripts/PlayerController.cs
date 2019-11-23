@@ -2,7 +2,9 @@
 using System.Collections; 
 using System.Collections.Generic; 
 using System.Timers; 
-using UnityEngine; 
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
 public class PlayerController : MonoBehaviour {
     public int dashDuration = 6;
     public float dashSpeedMultiplier = 5f;
@@ -57,6 +59,10 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKeyUp(KeyCode.LeftArrow)) 
         { 
             RightLeftUpDown[1] = false; 
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            SceneManager.LoadScene("MainMenu");
         }
     }
 

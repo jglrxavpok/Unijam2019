@@ -1302,6 +1302,11 @@ PrefabInstance:
       propertyPath: deplacement
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 2409732388942433979, guid: 2392041ea1116934f9ebe6b8158721bd,
+        type: 3}
+      propertyPath: invertDirection
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2392041ea1116934f9ebe6b8158721bd, type: 3}
 --- !u!1 &750859402
