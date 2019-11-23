@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour
 
     void TaskOnClickPlay()
     {
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene("Level_debut");
     }
 
     void TaskOnClickExit()
