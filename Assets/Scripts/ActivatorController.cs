@@ -31,6 +31,7 @@ public class ActivatorController : Activable {
     private MeshRenderer _meshRenderer;
     private AudioSource _source;
     private bool _active = false;
+    private int number_on_plate = 0;
 
     // Start is called before the first frame update
     void Start() {
