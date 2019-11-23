@@ -57,12 +57,12 @@ public class PlayerController : MonoBehaviour
         } 
         if (RightLeftUpDown[0]) 
         { 
-            if (RightLeftUpDown[3]) 
+            if (RightLeftUpDown[2]) 
             { 
                 player.transform.rotation = Quaternion.AngleAxis(-45, new Vector3(0,1,0)); 
                 player.transform.Translate(deplacementDiag, 0, 0); 
             } 
-            else if (RightLeftUpDown[2]) 
+            else if (RightLeftUpDown[3]) 
             { 
                 player.transform.rotation = Quaternion.AngleAxis(45, new Vector3(0,1,0)); 
                 player.transform.Translate(deplacementDiag, 0, 0); 
@@ -75,12 +75,12 @@ public class PlayerController : MonoBehaviour
         } 
         if (RightLeftUpDown[1]) 
         { 
-            if (RightLeftUpDown[3]) 
+            if (RightLeftUpDown[2]) 
             { 
                 player.transform.rotation = Quaternion.AngleAxis(-135, new Vector3(0,1,0)); 
                 player.transform.Translate(deplacementDiag, 0, 0); 
             } 
-            else if (RightLeftUpDown[2]) 
+            else if (RightLeftUpDown[3]) 
             { 
                 player.transform.rotation = Quaternion.AngleAxis(135, new Vector3(0,1,0)); 
                 player.transform.Translate(deplacementDiag, 0, 0); 
