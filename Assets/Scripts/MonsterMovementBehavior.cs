@@ -60,6 +60,11 @@ public class MonsterMovementBehavior : MonoBehaviour {
             playerPositions.RemoveAt(0);
         }
         Vector2 position = playerPositions[0];
+        Vector3 previousPosition = transform.position;
         transform.position = new Vector3(position.x, 0, position.y);
+        Vector3 deltaPosition = transform.position - previousPosition;
+        if (deltaPosition.sqrMagnitude > 0.00001) { // change l'angle que si on est pas à la même position qu'avant
+            transform.rotation = Quaternion.LookRotation(deltaPosition, Vector3.up);
+        }
     }
 }
