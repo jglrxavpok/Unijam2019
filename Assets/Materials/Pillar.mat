@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Pillar
-  m_Shader: {fileID: 4800000, guid: 3d9e50889fbed5e458603ff37fe7c1cb, type: 3}
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _NORMALMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 60ec0e07a5c76b6448849a811de13602, type: 3}
+        m_Texture: {fileID: 2800000, guid: 762d503c1e5f9524989fdf9c51f1f7c3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -75,7 +75,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _AmbientColor: {r: 1, g: 1, b: 1, a: 1}
+    - _AmbientColor: {r: 0.9245283, g: 0.763172, b: 0.763172, a: 1}
     - _Color: {r: 1, g: 0.98375833, b: 0.8066038, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
