@@ -105,7 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54248c7da30291a4abdfb7e270f6caca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activables:
-  - {fileID: 0}
+  activables: []
   activeMaterial: {fileID: 2100000, guid: de73af6e09073a143af87d733ae1c80b, type: 2}
+  lockedMaterial: {fileID: 2100000, guid: 6034480c9d68f29418fd797c9f52e50a, type: 2}
+  locked: 0
   activeDuration: -1

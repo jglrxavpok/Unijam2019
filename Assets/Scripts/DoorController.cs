@@ -53,7 +53,7 @@ public class DoorController : Activable {
         }
 
         if (_collisionCount >= 2) {
-            _rigidbody.constraints = RigidbodyConstraints.None;
+            //_rigidbody.constraints = RigidbodyConstraints.None;
         }
     }
 }
