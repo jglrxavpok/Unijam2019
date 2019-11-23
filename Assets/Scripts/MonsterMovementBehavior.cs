@@ -6,7 +6,7 @@ using UnityEngine;
 public class MonsterMovementBehavior : MonoBehaviour {
     public PlayerController playerController;
     public float catchup = 1.0f;
-    
+
     // nombre total de frames avant que le monstre bouge
     public int frameLagCount = 60 * 5; // 5s
     
@@ -63,8 +63,19 @@ public class MonsterMovementBehavior : MonoBehaviour {
         Vector3 previousPosition = transform.position;
         transform.position = new Vector3(position.x, 0, position.y);
         Vector3 deltaPosition = transform.position - previousPosition;
-        if (deltaPosition.sqrMagnitude > 0.00001) { // change l'angle que si on est pas à la même position qu'avant
+        if (deltaPosition.sqrMagnitude > 0.00001) {
+            // change l'angle que si on est pas à la même position qu'avant
             transform.rotation = Quaternion.LookRotation(deltaPosition, Vector3.up);
+        }
+        
+    }
+
+    public void InitPositions(int loadSize) {
+        Vector3 position = player.transform.position;
+        Vector2 initialPosition = new Vector2(position.x, position.z);
+        playerPositions.Clear();
+        for (int i = 0; i < loadSize; ++i) {
+            playerPositions.Add(initialPosition);
         }
     }
 }
