@@ -71,7 +71,8 @@ public class MonsterMovementBehavior : MonoBehaviour {
     }
 
     public void InitPositions(int loadSize) {
-        Vector2 initialPosition = player.transform.position;
+        Vector3 position = player.transform.position;
+        Vector2 initialPosition = new Vector2(position.x, position.z);
         playerPositions.Clear();
         for (int i = 0; i < loadSize; ++i) {
             playerPositions.Add(initialPosition);
