@@ -5,10 +5,10 @@ using System.Timers;
 using UnityEngine; 
 public class PlayerController : MonoBehaviour {
     public int dashDuration = 6;
-    public GameObject player;
     public float dashSpeedMultiplier = 5f;
-    public Rigidbody body;
 
+    private GameObject player;
+    private Rigidbody body;
     private float deplacementDroit = 0.1f;
     private float deplacementDiag;
     private bool[] RightLeftUpDown= new bool[4];
