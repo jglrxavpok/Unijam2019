@@ -30,7 +30,6 @@ public class MaledictionController : MonoBehaviour {
         foreach (var activable in activables) { //On active tous les Activables
             activable.Activate();
         }
-        Log.Warning("Malédiction invoquée");
         if (clipAudio) { //Si l'objet n'est ppas null
             music.clip = clipAudio;
             music.Play(); //On lance la musique
