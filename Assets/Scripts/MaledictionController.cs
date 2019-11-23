@@ -8,6 +8,8 @@ public class MaledictionController : MonoBehaviour {
     public Text maledictionText;
     public GameObject monster;
     public List<Activable> activables;
+    public AudioSource music;
+    public AudioClip clipAudio;
 
     private bool _alreadyTriggered = false; //Etre maudit une fois, c'est suffisant
     // Start is called before the first frame update
@@ -25,6 +27,8 @@ public class MaledictionController : MonoBehaviour {
         if (!other.CompareTag("Player") || _alreadyTriggered) return;
         foreach (var activable in activables) {
             activable.Activate();
+            music.clip = clipAudio;
+            music.Play();
         }
         maledictionText.gameObject.SetActive(true);//On affiche le message
         monster.transform.GetChild(0).gameObject.SetActive(true);//On affiche le monstre
