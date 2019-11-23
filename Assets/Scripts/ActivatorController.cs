@@ -18,6 +18,9 @@ public abstract class Activable : MonoBehaviour {
     public abstract void DeActivate(); //Fonction appellée quand la plaque se désactive
 }
 public class ActivatorController : Activable {
+    public AudioClip activateSound;
+    public AudioClip deactivateSound;
+    
     public List<Activable> activables; //La liste des objets à activer
     public Material activeMaterial; //Le matériau de la plaque lorsqu'elle est activée (peut être null, dans ce cas la plaque ne change pas de matériau quand elle est activée)
     public Material lockedMaterial;
@@ -26,10 +29,12 @@ public class ActivatorController : Activable {
 
     private Material _unactiveMaterial;
     private MeshRenderer _meshRenderer;
+    private AudioSource _source;
     private bool _active = false;
 
     // Start is called before the first frame update
     void Start() {
+        _source = gameObject.GetComponent<AudioSource>();
         _meshRenderer = gameObject.GetComponent<MeshRenderer>();
         _unactiveMaterial = _meshRenderer.material;
         if (locked && lockedMaterial) {
@@ -53,7 +58,7 @@ public class ActivatorController : Activable {
         if (lockedMaterial) {
             _meshRenderer.material = lockedMaterial;
         }
-
+        
         if (_active && activeDuration > 0) {
             StartCoroutine(ResetActive());
         }
@@ -68,6 +73,9 @@ public class ActivatorController : Activable {
             transform.Translate(transform.localScale.y/2 * Vector3.down);
             if(activeMaterial)
                 _meshRenderer.material = activeMaterial;
+            if (activateSound) {
+                _source.PlayOneShot(activateSound, 0.5f);
+            }
         }
     }
 
@@ -80,6 +88,9 @@ public class ActivatorController : Activable {
             transform.Translate(0.05f * Vector3.down);
             if(activeMaterial && !locked)
                 _meshRenderer.material = activeMaterial;
+            if (activateSound) {
+                _source.PlayOneShot(activateSound, 0.5f);
+            }
         }
     }
 
@@ -102,6 +113,10 @@ public class ActivatorController : Activable {
     private IEnumerator ResetActive() {
         yield return new WaitForSeconds(activeDuration);
         if (_active) {
+            if (deactivateSound) {
+                _source.PlayOneShot(deactivateSound);
+            }
+
             foreach (var activable in activables) {
                 activable.DeActivate();
             }
