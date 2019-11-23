@@ -1,140 +1,53 @@
 ﻿using System; 
 using System.Collections; 
 using System.Collections.Generic; 
-using System.Timers; 
+using System.Timers;
+using UnityEditor;
 using UnityEngine; 
 public class PlayerController : MonoBehaviour {
-    public int dashDuration = 6;
+    public float dashDuration = 6f;
     public float dashSpeedMultiplier = 5f;
 
     private GameObject player;
-    private Rigidbody body;
-    private float deplacementDroit = 0.1f;
-    private float deplacementDiag;
-    private bool[] RightLeftUpDown= new bool[4];
+    public float speed = 10f;
+    //private bool[] RightLeftUpDown= new bool[4];
     private bool shiftClick = false;
     private int timer = 0;
-    private bool moving;
+    public bool moving;
+    
+    private float _xAxisInput;
+    private float _yAxisInput;
 // Start is called before the first frame update 
     void Start() {
-        player = gameObject;
-        body = player.GetComponent<Rigidbody>();
-        deplacementDiag = Mathf.Sqrt((Mathf.Pow(deplacementDroit,2f))/2); 
-        RightLeftUpDown[0] = false; 
-        RightLeftUpDown[1] = false; 
-        RightLeftUpDown[2] = false; 
-        RightLeftUpDown[3] = false; 
+        
     } 
 // Update is called once per frame 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.UpArrow)) {
-            RightLeftUpDown[2] = true; 
-        } 
-        if (Input.GetKeyDown(KeyCode.DownArrow)) 
-        { 
-            RightLeftUpDown[3] = true; 
-        } 
-        if (Input.GetKeyDown(KeyCode.RightArrow)) 
-        { 
-            RightLeftUpDown[0] = true; 
-        } 
-        if (Input.GetKeyDown(KeyCode.LeftArrow)) 
-        { 
-            RightLeftUpDown[1] = true; 
-        } 
-        if (Input.GetKeyUp(KeyCode.UpArrow)) 
-        { 
-            RightLeftUpDown[2] = false; 
-        } 
-        if (Input.GetKeyUp(KeyCode.DownArrow)) 
-        { 
-            RightLeftUpDown[3] = false; 
-        } 
-        if (Input.GetKeyUp(KeyCode.RightArrow)) 
-        { 
-            RightLeftUpDown[0] = false; 
-        } 
-        if (Input.GetKeyUp(KeyCode.LeftArrow)) 
-        { 
-            RightLeftUpDown[1] = false; 
+        _yAxisInput = Input.GetAxis("Horizontal");
+        _xAxisInput = Input.GetAxis("Vertical");
+        moving = (_xAxisInput != 0 || _yAxisInput != 0);
+        Vector3 moveVector3 = (Vector3.right * _yAxisInput + Vector3.forward * _xAxisInput);
+        transform.Translate(Time.deltaTime * speed * moveVector3.normalized , Space.World);
+        if (moving) {
+            transform.rotation = Quaternion.AngleAxis(Vector3.Angle(Vector3.right, moveVector3)*(moveVector3.z<0?1:-1) + 90, Vector3.up);
+        }
+
+        if (Input.GetAxis("Jump")>0) {
+            if (!shiftClick) {
+                shiftClick = true;
+                speed *= dashSpeedMultiplier;
+            }
+            StartCoroutine(ResetDash());
         }
     }
 
-    private void FixedUpdate() {
-        moving = false;
-        if (RightLeftUpDown[0]) 
-        { 
-            if (RightLeftUpDown[2]) {
-                moving = true;
-                player.transform.rotation = Quaternion.AngleAxis(45, new Vector3(0,1,0)); 
-                body.MovePosition(body.position + new Vector3(deplacementDiag,0,deplacementDiag)); 
-            } 
-            else if (RightLeftUpDown[3]) 
-            { 
-                moving = true;
-                player.transform.rotation = Quaternion.AngleAxis(135, new Vector3(0,1,0)); 
-                body.MovePosition(body.position + new Vector3(deplacementDiag,0,-deplacementDiag));
-            } 
-            else 
-            { 
-                moving = true;
-                player.transform.rotation = Quaternion.AngleAxis(90, new Vector3(0,1,0)); 
-                body.MovePosition(body.position + new Vector3(deplacementDroit,0,0)); 
-            } 
-        } 
-        if (RightLeftUpDown[1]) 
-        { 
-            if (RightLeftUpDown[2]) 
-            { 
-                moving = true;
-                player.transform.rotation = Quaternion.AngleAxis(-45, new Vector3(0,1,0)); 
-                body.MovePosition(body.position + new Vector3(-deplacementDiag,0,deplacementDiag));
-            } 
-            else if (RightLeftUpDown[3]) 
-            { 
-                moving = true;
-                player.transform.rotation = Quaternion.AngleAxis(-135, new Vector3(0,1,0)); 
-                body.MovePosition(body.position + new Vector3(-deplacementDiag,0,-deplacementDiag));
-            } 
-            else 
-            { 
-                moving = true;
-                player.transform.rotation = Quaternion.AngleAxis(-90, new Vector3(0,1,0)); 
-                body.MovePosition(body.position + new Vector3(-deplacementDroit,0,0));
-            } 
-        } 
-        if ((RightLeftUpDown[2]) && (!RightLeftUpDown[1]) && (!RightLeftUpDown[0])) 
-        { 
-            moving = true;
-            player.transform.rotation = Quaternion.AngleAxis(0, new Vector3(0,1,0)); 
-            body.MovePosition(body.position + new Vector3(0,0,deplacementDroit));
-        } 
-        if ((RightLeftUpDown[3]) && (!RightLeftUpDown[1]) && (!RightLeftUpDown[0])) 
-        {
-            moving = true;
-            player.transform.rotation = Quaternion.AngleAxis(180, new Vector3(0,1,0)); 
-            body.MovePosition(body.position + new Vector3(0,0,-deplacementDroit)); 
-        } 
-        if (Input.GetKeyDown(KeyCode.LeftShift)) { 
-            if (!shiftClick) { 
-                shiftClick = true; 
-                deplacementDroit *= dashSpeedMultiplier; 
-                deplacementDiag = Mathf.Sqrt((Mathf.Pow(deplacementDroit,2f))/2); 
-            } 
-        } 
-        if (shiftClick ) { 
-            if (timer == dashDuration) { 
-                deplacementDroit = deplacementDroit/dashSpeedMultiplier;
-                deplacementDiag = Mathf.Sqrt((Mathf.Pow(deplacementDroit,2f))/2); 
-                timer = 0; 
-                shiftClick = false; 
-            } 
-            else { 
-                timer++; 
-            } 
-        } 
+    private IEnumerator ResetDash() {
+        yield return new WaitForSeconds(dashDuration);
+        if (shiftClick) {
+            shiftClick = false;
+            speed /= dashSpeedMultiplier;
+        }
     }
-
     public bool isDashing() {
         return shiftClick;
     }
