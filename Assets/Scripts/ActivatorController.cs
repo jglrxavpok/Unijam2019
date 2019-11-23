@@ -54,7 +54,7 @@ public class ActivatorController : Activable {
             _meshRenderer.material = lockedMaterial;
         }
 
-        if (_active) {
+        if (_active && activeDuration > 0) {
             StartCoroutine(ResetActive());
         }
     }
