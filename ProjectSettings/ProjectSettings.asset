@@ -631,7 +631,7 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
-    Collab: 1
+    Collab: 0
     UNet: 1
   luminIcon:
     m_Name: 
@@ -652,10 +652,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 604bcb08-0339-4608-8453-a15b21252c0d
+  cloudProjectId: 964aeabf-b113-4d2b-b371-2b671bf012c9
   framebufferDepthMemorylessMode: 0
   projectName: Unijam2019
-  organizationId: jglrxavpok
+  organizationId: r-mi-van-der-lee
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
