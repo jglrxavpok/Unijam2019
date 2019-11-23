@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour {
             transform.rotation = Quaternion.AngleAxis(Vector3.Angle(Vector3.right, moveVector3)*(moveVector3.z<0?1:-1) + 90, Vector3.up);
         }
 
-        if (Input.GetAxis("Jump")>0) {
+        if (Input.GetAxis("Dash")>0) {
             if (!shiftClick) {
                 shiftClick = true;
                 speed *= dashSpeedMultiplier;
