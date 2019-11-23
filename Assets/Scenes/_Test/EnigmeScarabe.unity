@@ -351,7 +351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a8d8ce70c8a4c6fa26bc2b43bc96018, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correspondingElytra: {fileID: 1678075481}
+  correspondingElytra: {fileID: 1678075477}
   maxActiveFrames: 300
 --- !u!1 &807582408
 GameObject:
@@ -558,7 +558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a8d8ce70c8a4c6fa26bc2b43bc96018, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correspondingElytra: {fileID: 1697658452}
+  correspondingElytra: {fileID: 1697658448}
   maxActiveFrames: 300
 --- !u!1 &1198554144
 GameObject:
@@ -793,7 +793,7 @@ GameObject:
   - component: {fileID: 1678075480}
   - component: {fileID: 1678075479}
   - component: {fileID: 1678075478}
-  - component: {fileID: 1678075481}
+  - component: {fileID: 1678075477}
   m_Layer: 0
   m_Name: Elytre G
   m_TagString: Untagged
@@ -801,6 +801,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1678075477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678075476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ff715301ecd1444b52b45f133837a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directionMultiplier: -1
+  instrumentPlaying: 0
 --- !u!23 &1678075478
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -861,20 +875,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &1678075481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1678075476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2ff715301ecd1444b52b45f133837a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directionMultiplier: -1
-  instrumentPlaying: 0
 --- !u!1 &1697658447
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,7 +886,7 @@ GameObject:
   - component: {fileID: 1697658451}
   - component: {fileID: 1697658450}
   - component: {fileID: 1697658449}
-  - component: {fileID: 1697658452}
+  - component: {fileID: 1697658448}
   m_Layer: 0
   m_Name: Elytre D
   m_TagString: Untagged
@@ -894,6 +894,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1697658448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697658447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ff715301ecd1444b52b45f133837a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directionMultiplier: 1
+  instrumentPlaying: 0
 --- !u!23 &1697658449
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -954,20 +968,113 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &1697658452
+--- !u!1 &1716696797
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1716696801}
+  - component: {fileID: 1716696800}
+  - component: {fileID: 1716696799}
+  - component: {fileID: 1716696798}
+  - component: {fileID: 1716696802}
+  m_Layer: 0
+  m_Name: Door
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1716696798
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716696797}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1716696799
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716696797}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1716696800
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716696797}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1716696801
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716696797}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.11, y: 0, z: 9.91}
+  m_LocalScale: {x: 2, y: 5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1716696802
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1697658447}
+  m_GameObject: {fileID: 1716696797}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2ff715301ecd1444b52b45f133837a9, type: 3}
+  m_Script: {fileID: 11500000, guid: 92edce3b7a514d3ea17efce935dccd16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  directionMultiplier: 1
-  instrumentPlaying: 0
+  leftElytra: {fileID: 1678075477}
+  rightElytra: {fileID: 1697658448}
 --- !u!1001 &2094874152
 PrefabInstance:
   m_ObjectHideFlags: 0
