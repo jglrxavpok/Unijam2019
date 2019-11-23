@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 41d0b05cd4651564b9f5cb03c93c195a
+=======
+<<<<<<< HEAD:Assets/Art.meta
+guid: 4aa46bc001168f94184550b024b4bb48
+=======
+guid: 41d0b05cd4651564b9f5cb03c93c195a
+>>>>>>> 7c2f8f676ff15e48ccf2c5ce115cf67c35ec550e:Assets/Scenes.meta
+>>>>>>> 7c2f8f676ff15e48ccf2c5ce115cf67c35ec550e
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
