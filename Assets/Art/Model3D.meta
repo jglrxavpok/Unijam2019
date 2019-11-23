@@ -1,13 +1,9 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 8eb66e6d7f5b5164d89208670a541d38
-=======
 <<<<<<< HEAD:Assets/Art/Model3D.meta
 guid: c39728af99ad8c04bb6a6e1ab0aee067
 =======
 guid: acdce7c2ed150f54a8b545d655399e58
 >>>>>>> 7c2f8f676ff15e48ccf2c5ce115cf67c35ec550e:Assets/Prefabs.meta
->>>>>>> 7c2f8f676ff15e48ccf2c5ce115cf67c35ec550e
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
