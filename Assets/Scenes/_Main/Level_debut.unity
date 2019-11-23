@@ -1482,16 +1482,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3634354219414051866, guid: 20dea41b1af6ffb45a31aebb9225c77a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3634354219414051870, guid: 20dea41b1af6ffb45a31aebb9225c77a,
         type: 3}
       propertyPath: playerController
       value: 
       objectReference: {fileID: 416180687}
+    - target: {fileID: 3634354219414051866, guid: 20dea41b1af6ffb45a31aebb9225c77a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8296172667346370275, guid: 20dea41b1af6ffb45a31aebb9225c77a,
         type: 3}
       propertyPath: m_IsActive
@@ -1718,6 +1718,8 @@ MonoBehaviour:
   activables:
   - {fileID: 1123574061}
   - {fileID: 752762608}
+  music: {fileID: 722323470}
+  clipAudio: {fileID: 8300000, guid: adb86c858e4580b41abd60ef9e676aa4, type: 3}
 --- !u!65 &950170288
 BoxCollider:
   m_ObjectHideFlags: 0
