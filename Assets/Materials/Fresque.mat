@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: hieroglyphe
+  m_Name: Fresque
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _METALLICGLOSSMAP _NORMALMAP
   m_LightmapFlags: 4
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: beda9cba879c93643a5de14099eaffa1, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8141778dbe62ff9468b844e3d336591f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -40,15 +40,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: b133963a108ee1a4c8c9465fc1600e30, type: 3}
+        m_Texture: {fileID: 2800000, guid: 08ee06f90df757d449dcddf166b129fb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: b732dd4baed17b84eb7d77aa95bf5261, type: 3}
+        m_Texture: {fileID: 2800000, guid: 455734f869dc5b04d94b07d5a231fb9a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: 8778396845667c9458e0463ad10b9da8, type: 3}
+        m_Texture: {fileID: 2800000, guid: 32b17eb1cddf7ea45a82b4bf6f6720b9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
