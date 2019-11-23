@@ -65,7 +65,7 @@ public class ActivatorController : Activable {
             foreach (var activable in activables) {
                 activable.Activate();
             }
-            transform.Translate(0.05f * Vector3.down);
+            transform.Translate(transform.localScale.y/2 * Vector3.down);
             if(activeMaterial)
                 _meshRenderer.material = activeMaterial;
         }
@@ -78,7 +78,7 @@ public class ActivatorController : Activable {
                 activable.Activate();
             }
             transform.Translate(0.05f * Vector3.down);
-            if(activeMaterial)
+            if(activeMaterial && !locked)
                 _meshRenderer.material = activeMaterial;
         }
     }
@@ -112,7 +112,7 @@ public class ActivatorController : Activable {
             else {
                 _meshRenderer.material = _unactiveMaterial;
             }
-            transform.Translate(0.05f * Vector3.up);
+            transform.Translate(transform.localScale.y/2 * Vector3.up);
         }
     }
 }
