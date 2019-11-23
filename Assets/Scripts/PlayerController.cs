@@ -11,7 +11,9 @@ public class PlayerController : MonoBehaviour
     private bool[] RightLeftUpDown= new bool[4]; 
     private bool shiftClick = false;
     public Rigidbody body;
-    private int timer = 0; 
+    private int timer = 0;
+
+    private bool moving;
 // Start is called before the first frame update 
     void Start() 
     { 
@@ -22,10 +24,8 @@ public class PlayerController : MonoBehaviour
         RightLeftUpDown[3] = false; 
     } 
 // Update is called once per frame 
-    void Update() 
-    { 
-        if (Input.GetKeyDown(KeyCode.UpArrow)) 
-        { 
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.UpArrow)) {
             RightLeftUpDown[2] = true; 
         } 
         if (Input.GetKeyDown(KeyCode.DownArrow)) 
@@ -59,20 +59,23 @@ public class PlayerController : MonoBehaviour
     }
 
     private void FixedUpdate() {
+        moving = false;
         if (RightLeftUpDown[0]) 
         { 
-            if (RightLeftUpDown[2]) 
-            { 
+            if (RightLeftUpDown[2]) {
+                moving = true;
                 player.transform.rotation = Quaternion.AngleAxis(45, new Vector3(0,1,0)); 
                 body.MovePosition(body.position + new Vector3(deplacementDiag,0,deplacementDiag)); 
             } 
             else if (RightLeftUpDown[3]) 
             { 
+                moving = true;
                 player.transform.rotation = Quaternion.AngleAxis(135, new Vector3(0,1,0)); 
                 body.MovePosition(body.position + new Vector3(deplacementDiag,0,-deplacementDiag));
             } 
             else 
             { 
+                moving = true;
                 player.transform.rotation = Quaternion.AngleAxis(90, new Vector3(0,1,0)); 
                 body.MovePosition(body.position + new Vector3(deplacementDroit,0,0)); 
             } 
@@ -81,27 +84,32 @@ public class PlayerController : MonoBehaviour
         { 
             if (RightLeftUpDown[2]) 
             { 
+                moving = true;
                 player.transform.rotation = Quaternion.AngleAxis(-45, new Vector3(0,1,0)); 
                 body.MovePosition(body.position + new Vector3(-deplacementDiag,0,deplacementDiag));
             } 
             else if (RightLeftUpDown[3]) 
             { 
+                moving = true;
                 player.transform.rotation = Quaternion.AngleAxis(-135, new Vector3(0,1,0)); 
                 body.MovePosition(body.position + new Vector3(-deplacementDiag,0,-deplacementDiag));
             } 
             else 
             { 
+                moving = true;
                 player.transform.rotation = Quaternion.AngleAxis(-90, new Vector3(0,1,0)); 
                 body.MovePosition(body.position + new Vector3(-deplacementDroit,0,0));
             } 
         } 
         if ((RightLeftUpDown[2]) && (!RightLeftUpDown[1]) && (!RightLeftUpDown[0])) 
         { 
+            moving = true;
             player.transform.rotation = Quaternion.AngleAxis(0, new Vector3(0,1,0)); 
             body.MovePosition(body.position + new Vector3(0,0,deplacementDroit));
         } 
         if ((RightLeftUpDown[3]) && (!RightLeftUpDown[1]) && (!RightLeftUpDown[0])) 
-        { 
+        {
+            moving = true;
             player.transform.rotation = Quaternion.AngleAxis(180, new Vector3(0,1,0)); 
             body.MovePosition(body.position + new Vector3(0,0,-deplacementDroit)); 
         } 
@@ -126,6 +134,10 @@ public class PlayerController : MonoBehaviour
     }
 
     public bool isDashing() {
-        return timer > 0;
+        return shiftClick;
+    }
+
+    public bool isMoving() {
+        return moving;
     }
 }
