@@ -87,6 +87,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2486129118639395116}
+  - component: {fileID: 7639184637508178633}
   m_Layer: 0
   m_Name: amphore4
   m_TagString: Untagged
@@ -110,6 +111,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &7639184637508178633
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503033056759866175}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.1377287
+  m_Height: 5.2291245
+  m_Direction: 1
+  m_Center: {x: 0, y: 2.752289, z: -0.000002861023}
 --- !u!1 &8948418119257749823
 GameObject:
   m_ObjectHideFlags: 0

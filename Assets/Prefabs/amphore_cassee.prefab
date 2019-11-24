@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3027726664133338049}
-  - component: {fileID: 8467261088123576589}
+  - component: {fileID: 5353056261627865183}
   m_Layer: 0
   m_Name: amphore_cassee
   m_TagString: Untagged
@@ -32,8 +32,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8467261088123576589
-BoxCollider:
+--- !u!136 &5353056261627865183
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -42,9 +42,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.3483584, y: 3.778164, z: 2.5056667}
-  m_Center: {x: -0.044944882, y: 2.0408096, z: -0.033709526}
+  m_Radius: 1.5318019
+  m_Height: 4.772529
+  m_Direction: 1
+  m_Center: {x: 0.06448674, y: 2.369921, z: 0}
 --- !u!1 &8406829349476633554
 GameObject:
   m_ObjectHideFlags: 0

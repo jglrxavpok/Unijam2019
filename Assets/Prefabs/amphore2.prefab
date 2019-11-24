@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3757117552335024932}
   - component: {fileID: 5294245514955409682}
   - component: {fileID: 1892771152138647019}
-  - component: {fileID: 6358389631327110061}
+  - component: {fileID: -600600974112245090}
   m_Layer: 0
   m_Name: amphore2
   m_TagString: Untagged
@@ -79,8 +79,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &6358389631327110061
-BoxCollider:
+--- !u!135 &-600600974112245090
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -90,5 +90,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.037498593, y: 0.037144482, z: 0.033937674}
-  m_Center: {x: 0.00004949808, y: -0.0010100567, z: 0.01696884}
+  m_Radius: 0.021879535
+  m_Center: {x: 0, y: 0.0000000027939673, z: 0.021879535}
