@@ -5,52 +5,31 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/_Main/MainMenu.unity
     guid: 1aeceafc0e99d3040bbb5ef16b5b9d6c
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/_Main/OpeningCinematic.unity
     guid: ffc3fab4136e0154d9ab9745bdcb47fd
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/_Main/Level 1.unity
     guid: 600f25deb3b362f4e845650b2642b19c
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/_Main/GameOver.unity
     guid: 26e0b5a56d3bdcc419c62c2107971f64
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/_Main/Level Scarabee.unity
     guid: 35a1b0ca0b8c8d341a436bafb6952eab
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/_Main/Level_debut.unity
     guid: 0556a2bc864906b4887cebd7ed15aab1
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/_Main/Level_fin.unity
     guid: f3c04a65dadc0f34cbb59754aff89eb9
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/_Main/Victory.unity
     guid: 3e3d91d8b703c1849ba3cadd218f3f89
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/_Main/Level 3.unity
     guid: cad4c42073624d947a7bae7071f58104
-  - enabled: 1
-    path: Assets/fIIEts/New Folder/MainMenu 1.unity
-    guid: 5a5c93992a433914581823dd38986696
-  - enabled: 1
-    path: Assets/fIIEts/New Folder/Level 2.unity
-    guid: 589a97f9c7271de489aaeaf35b8c49ac
-  - enabled: 1
-    path: Assets/fIIEts/New Folder/Level 4.unity
-    guid: 671c8d7222dedc04a8491840ae0f7068
-  - enabled: 1
-    path: Assets/fIIEts/New Folder/Level Scarabee 1.unity
-    guid: 3b42c74de39e28e42a65eabcc7b0ed03
-  - enabled: 1
-    path: Assets/fIIEts/New Folder/Level_debut 1.unity
-    guid: b31ac24c540c84a44adc723830aea1c7
-  - enabled: 1
-    path: Assets/fIIEts/New Folder/Level_fin 1.unity
-    guid: 2e77089d0ce166b4d9bb536ad79d4b98
-  - enabled: 1
-    path: Assets/fIIEts/New Folder/Victory 1.unity
-    guid: 73ce76743c7aee940bea2a441f5b475e
   m_configObjects: {}
