@@ -8,6 +8,7 @@ public class DoorController : Activable {
     public float speed = 10f; //la vitesse de déplacement de la porte pendant son ouverture
     public bool invertDirection = false; //inverse la direction de déplacement de la porte pour son ouverture
     public AudioClip doorOpeningSound;
+    public int activeUntilMove = 1;
 
     private bool _activated;
     private bool _move = false;
@@ -42,6 +43,8 @@ public class DoorController : Activable {
     }
 
     public override void Activate() {
+        --activeUntilMove;
+        if(activeUntilMove!=0) return;
         if (doorOpeningSound && _source) {
             _source.PlayOneShot(doorOpeningSound, 2f);
         }
@@ -50,8 +53,11 @@ public class DoorController : Activable {
     }
 
     public override void DeActivate() {
+        ++activeUntilMove;
+        if (_activated) {
+            _move = true; //On ne bouge pas si on n'était pas activé
+        }
         _activated = false;
-        _move = true;
     }
 
     private void OnCollisionEnter(Collision other)
