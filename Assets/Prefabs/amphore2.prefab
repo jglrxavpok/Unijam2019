@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3757117552335024932}
   - component: {fileID: 5294245514955409682}
   - component: {fileID: 1892771152138647019}
+  - component: {fileID: 6358389631327110061}
   m_Layer: 0
   m_Name: amphore2
   m_TagString: Untagged
@@ -57,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: d4ba0799767859c4196f7badbc982ed6, type: 3}
+  - {fileID: 2100000, guid: 70704a27c7ffa29449b4b8e12170a0dd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,3 +79,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &6358389631327110061
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178084982366306615}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.037498593, y: 0.037144482, z: 0.033937674}
+  m_Center: {x: 0.00004949808, y: -0.0010100567, z: 0.01696884}
