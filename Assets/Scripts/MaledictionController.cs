@@ -50,9 +50,11 @@ public class MaledictionController : MonoBehaviour {
             Debug.Log("Référence à maledictionText non définie dans le MaledictionController");
         }
         if (monster) {
-            monster.transform.GetChild(0).gameObject.SetActive(true); //On affiche le monstre
-            monster.transform.GetChild(0).GetComponent<MonsterMovementBehavior>()
-                .InitPositions(500); //nombre de frames durant lesquelles le monstre est immobile
+            monster.SetActive(true); //On affiche le monstre
+            if (monster.GetComponent<MonsterMovementBehavior>() != null) {
+                monster.GetComponent<MonsterMovementBehavior>()
+                    .InitPositions(500); //nombre de frames durant lesquelles le monstre est immobile
+            }
         } else {
             Debug.Log("Référence à monster non définie dans le MaledictionController");
         }
