@@ -10,6 +10,8 @@ public class MaledictionController : MonoBehaviour {
     public List<Activable> activables;
     public AudioSource music;
     public AudioClip clipAudio;
+    public AudioSource monsterSource;
+    public AudioClip monsterSound;
 
     private bool _alreadyTriggered = false; //Etre maudit une fois, c'est suffisant
     // Start is called before the first frame update
@@ -37,6 +39,9 @@ public class MaledictionController : MonoBehaviour {
         else {
             Debug.Log("Référence à music non définie dans le MaledictionController");
         }
+
+        monsterSource.clip = monsterSound;
+        monsterSource.Play();
 
         if (maledictionText) {
             maledictionText.gameObject.SetActive(true); //On affiche le message

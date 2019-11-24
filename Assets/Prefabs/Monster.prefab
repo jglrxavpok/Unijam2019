@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3634354219414051866}
   - component: {fileID: 3634354219414051870}
   - component: {fileID: 444625420}
+  - component: {fileID: 8841002616813829904}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Monster
@@ -73,6 +74,8 @@ MonoBehaviour:
   catchup: 1
   frameLagCount: 600
   speedThreshold: 0.5
+  particules: {fileID: 0}
+  begin: 1
   lerpSpeed: 0.25
   distanceThreshold: 0.05
 --- !u!54 &444625420
@@ -91,6 +94,102 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!82 &8841002616813829904
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3634354219414051865}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1853057002
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -102,6 +201,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monstre@T-Pose
+      objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 99e53c55aae86ff42b2aea67867c5971,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c5db5885081a91743b62664d1a5c4d3e, type: 2}
+    - target: {fileID: -6057140222963153312, guid: 99e53c55aae86ff42b2aea67867c5971,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 99e53c55aae86ff42b2aea67867c5971,
         type: 3}
@@ -172,16 +281,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 99e53c55aae86ff42b2aea67867c5971,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: c5db5885081a91743b62664d1a5c4d3e, type: 2}
-    - target: {fileID: -6057140222963153312, guid: 99e53c55aae86ff42b2aea67867c5971,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2927792998606800557, guid: 99e53c55aae86ff42b2aea67867c5971,
         type: 3}

@@ -2234,6 +2234,8 @@ MonoBehaviour:
   - {fileID: 752762608}
   music: {fileID: 722323470}
   clipAudio: {fileID: 8300000, guid: adb86c858e4580b41abd60ef9e676aa4, type: 3}
+  monsterSource: {fileID: 1396717546}
+  monsterSound: {fileID: 8300000, guid: c79fb2b66b773fb4dac25be888c865ce, type: 3}
 --- !u!65 &950170288
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2705,6 +2707,12 @@ PrefabInstance:
 --- !u!1 &1396717545 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3634354219414051865, guid: 20dea41b1af6ffb45a31aebb9225c77a,
+    type: 3}
+  m_PrefabInstance: {fileID: 895767767}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1396717546 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8841002616813829904, guid: 20dea41b1af6ffb45a31aebb9225c77a,
     type: 3}
   m_PrefabInstance: {fileID: 895767767}
   m_PrefabAsset: {fileID: 0}
