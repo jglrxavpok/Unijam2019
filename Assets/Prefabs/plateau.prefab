@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1510626710494011669}
   - component: {fileID: 7614975926060276515}
   - component: {fileID: 4220256756652222426}
+  - component: {fileID: 1011803516689183314}
   m_Layer: 0
   m_Name: plateau
   m_TagString: Untagged
@@ -57,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 7a30a95c763671244964d0bcdccf3a09, type: 3}
+  - {fileID: 2100000, guid: 8b7b5b40589a7234ab8a3565fecda122, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,3 +79,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1011803516689183314
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2498806362455184134}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.034783326, y: 0.040467523, z: 0.008722806}
+  m_Center: {x: -0.00048741398, y: -0.0005109459, z: 0.004361406}

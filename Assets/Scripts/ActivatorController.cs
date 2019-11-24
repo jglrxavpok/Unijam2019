@@ -31,7 +31,7 @@ public class ActivatorController : Activable {
     private MeshRenderer _meshRenderer;
     private AudioSource _source;
     private bool _active = false;
-    public int _nbObjetsQuiMOntActive= 0;
+    private int _nbObjetsQuiMOntActive= 0;
 
     // Start is called before the first frame update
     void Start() {
@@ -60,7 +60,7 @@ public class ActivatorController : Activable {
             _meshRenderer.material = lockedMaterial;
         }
         
-        if (_active && activeDuration > 0) {
+        if (_active && activeDuration >= 0) {
             StartCoroutine(ResetActive());
         }
     }
@@ -87,7 +87,7 @@ public class ActivatorController : Activable {
     private void OnTriggerExit(Collider other) {
         if (other.CompareTag("Player")|| other.CompareTag("Box")) {
             --_nbObjetsQuiMOntActive;
-            if (activeDuration > 0 && _nbObjetsQuiMOntActive == 0) {
+            if (activeDuration >= 0 && _nbObjetsQuiMOntActive == 0) {
                 StartCoroutine(ResetActive());
             }
         }
