@@ -661,6 +661,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 708022796}
     m_Modifications:
+    - target: {fileID: 7119946326681349916, guid: 2004e17fad3546c439ddbecfbcca3429,
+        type: 3}
+      propertyPath: m_Name
+      value: torche (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 6094628888387165455, guid: 2004e17fad3546c439ddbecfbcca3429,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -730,11 +735,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 200.00024
-      objectReference: {fileID: 0}
-    - target: {fileID: 7119946326681349916, guid: 2004e17fad3546c439ddbecfbcca3429,
-        type: 3}
-      propertyPath: m_Name
-      value: torche (1)
       objectReference: {fileID: 0}
     - target: {fileID: 5067722094580947780, guid: 2004e17fad3546c439ddbecfbcca3429,
         type: 3}
@@ -1167,11 +1167,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2.2555
       objectReference: {fileID: 0}
-    - target: {fileID: 4979388655454782903, guid: 155dec92445d39d4b87f21efa3ab3566,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 25282407ef6914d4a8b73953f3c591cc, type: 2}
     - target: {fileID: 4979388655454782898, guid: 155dec92445d39d4b87f21efa3ab3566,
         type: 3}
       propertyPath: activeMaterial
@@ -1182,6 +1177,11 @@ PrefabInstance:
       propertyPath: activeDuration
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4979388655454782903, guid: 155dec92445d39d4b87f21efa3ab3566,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 25282407ef6914d4a8b73953f3c591cc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 155dec92445d39d4b87f21efa3ab3566, type: 3}
 --- !u!4 &822720337 stripped
@@ -1272,11 +1272,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2.2555
       objectReference: {fileID: 0}
-    - target: {fileID: 4979388655454782903, guid: 155dec92445d39d4b87f21efa3ab3566,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 25282407ef6914d4a8b73953f3c591cc, type: 2}
     - target: {fileID: 4979388655454782898, guid: 155dec92445d39d4b87f21efa3ab3566,
         type: 3}
       propertyPath: activables.Array.size
@@ -1297,6 +1292,11 @@ PrefabInstance:
       propertyPath: activables.Array.data[0]
       value: 
       objectReference: {fileID: 1622617561}
+    - target: {fileID: 4979388655454782903, guid: 155dec92445d39d4b87f21efa3ab3566,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 25282407ef6914d4a8b73953f3c591cc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 155dec92445d39d4b87f21efa3ab3566, type: 3}
 --- !u!4 &1085162966 stripped
@@ -1515,6 +1515,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 708022796}
     m_Modifications:
+    - target: {fileID: 7119946326681349916, guid: 2004e17fad3546c439ddbecfbcca3429,
+        type: 3}
+      propertyPath: m_Name
+      value: torche (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 6094628888387165455, guid: 2004e17fad3546c439ddbecfbcca3429,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1523,7 +1528,7 @@ PrefabInstance:
     - target: {fileID: 6094628888387165455, guid: 2004e17fad3546c439ddbecfbcca3429,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 30.6
+      value: 26.99
       objectReference: {fileID: 0}
     - target: {fileID: 6094628888387165455, guid: 2004e17fad3546c439ddbecfbcca3429,
         type: 3}
@@ -1570,11 +1575,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7119946326681349916, guid: 2004e17fad3546c439ddbecfbcca3429,
-        type: 3}
-      propertyPath: m_Name
-      value: torche (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 5067722094580947780, guid: 2004e17fad3546c439ddbecfbcca3429,
         type: 3}
       propertyPath: m_Intensity
@@ -1583,7 +1583,7 @@ PrefabInstance:
     - target: {fileID: 5067722094580947780, guid: 2004e17fad3546c439ddbecfbcca3429,
         type: 3}
       propertyPath: m_Shadows.m_Type
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5067722094580947780, guid: 2004e17fad3546c439ddbecfbcca3429,
         type: 3}
@@ -1603,6 +1603,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9099370433719335635, guid: d004f2e2f38de5b42869a8f9a75a1851,
+        type: 3}
+      propertyPath: monsterSource
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9099370433719335635, guid: d004f2e2f38de5b42869a8f9a75a1851,
+        type: 3}
+      propertyPath: speed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9099370433719335635, guid: d004f2e2f38de5b42869a8f9a75a1851,
+        type: 3}
+      propertyPath: dashDuration
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9099370433719335635, guid: d004f2e2f38de5b42869a8f9a75a1851,
+        type: 3}
+      propertyPath: dashSpeedMultiplier
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3723688802391865056, guid: d004f2e2f38de5b42869a8f9a75a1851,
         type: 3}
@@ -1658,26 +1678,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9099370433719335635, guid: d004f2e2f38de5b42869a8f9a75a1851,
-        type: 3}
-      propertyPath: monsterSource
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 9099370433719335635, guid: d004f2e2f38de5b42869a8f9a75a1851,
-        type: 3}
-      propertyPath: speed
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 9099370433719335635, guid: d004f2e2f38de5b42869a8f9a75a1851,
-        type: 3}
-      propertyPath: dashDuration
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9099370433719335635, guid: d004f2e2f38de5b42869a8f9a75a1851,
-        type: 3}
-      propertyPath: dashSpeedMultiplier
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4268781310200645511, guid: d004f2e2f38de5b42869a8f9a75a1851,
         type: 3}
@@ -1795,6 +1795,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 708022796}
     m_Modifications:
+    - target: {fileID: 7119946326681349916, guid: 2004e17fad3546c439ddbecfbcca3429,
+        type: 3}
+      propertyPath: m_Name
+      value: torche
+      objectReference: {fileID: 0}
     - target: {fileID: 6094628888387165455, guid: 2004e17fad3546c439ddbecfbcca3429,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1849,11 +1854,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7119946326681349916, guid: 2004e17fad3546c439ddbecfbcca3429,
-        type: 3}
-      propertyPath: m_Name
-      value: torche
       objectReference: {fileID: 0}
     - target: {fileID: 5067722094580947780, guid: 2004e17fad3546c439ddbecfbcca3429,
         type: 3}
@@ -2781,11 +2781,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2.2555
       objectReference: {fileID: 0}
-    - target: {fileID: 4979388655454782903, guid: 155dec92445d39d4b87f21efa3ab3566,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 25282407ef6914d4a8b73953f3c591cc, type: 2}
     - target: {fileID: 4979388655454782898, guid: 155dec92445d39d4b87f21efa3ab3566,
         type: 3}
       propertyPath: activeMaterial
@@ -2796,6 +2791,11 @@ PrefabInstance:
       propertyPath: activeDuration
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4979388655454782903, guid: 155dec92445d39d4b87f21efa3ab3566,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 25282407ef6914d4a8b73953f3c591cc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 155dec92445d39d4b87f21efa3ab3566, type: 3}
 --- !u!1 &1581936555
@@ -3549,11 +3549,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2.2555
       objectReference: {fileID: 0}
-    - target: {fileID: 4979388655454782903, guid: 155dec92445d39d4b87f21efa3ab3566,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 25282407ef6914d4a8b73953f3c591cc, type: 2}
     - target: {fileID: 4979388655454782898, guid: 155dec92445d39d4b87f21efa3ab3566,
         type: 3}
       propertyPath: activables.Array.size
@@ -3574,6 +3569,11 @@ PrefabInstance:
       propertyPath: activables.Array.data[0]
       value: 
       objectReference: {fileID: 1838797238}
+    - target: {fileID: 4979388655454782903, guid: 155dec92445d39d4b87f21efa3ab3566,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 25282407ef6914d4a8b73953f3c591cc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 155dec92445d39d4b87f21efa3ab3566, type: 3}
 --- !u!4 &1817714810 stripped
@@ -3888,6 +3888,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 708022796}
     m_Modifications:
+    - target: {fileID: 7119946326681349916, guid: 2004e17fad3546c439ddbecfbcca3429,
+        type: 3}
+      propertyPath: m_Name
+      value: torche (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 6094628888387165455, guid: 2004e17fad3546c439ddbecfbcca3429,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3896,7 +3901,7 @@ PrefabInstance:
     - target: {fileID: 6094628888387165455, guid: 2004e17fad3546c439ddbecfbcca3429,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 30.59
+      value: 26.98
       objectReference: {fileID: 0}
     - target: {fileID: 6094628888387165455, guid: 2004e17fad3546c439ddbecfbcca3429,
         type: 3}
@@ -3958,11 +3963,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 199.99997
       objectReference: {fileID: 0}
-    - target: {fileID: 7119946326681349916, guid: 2004e17fad3546c439ddbecfbcca3429,
-        type: 3}
-      propertyPath: m_Name
-      value: torche (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 5067722094580947780, guid: 2004e17fad3546c439ddbecfbcca3429,
         type: 3}
       propertyPath: m_Intensity
@@ -3971,7 +3971,7 @@ PrefabInstance:
     - target: {fileID: 5067722094580947780, guid: 2004e17fad3546c439ddbecfbcca3429,
         type: 3}
       propertyPath: m_Shadows.m_Type
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5067722094580947780, guid: 2004e17fad3546c439ddbecfbcca3429,
         type: 3}
@@ -4142,11 +4142,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3194309011897462934, guid: 1c5f027add3c2864489272339b4a5ded,
-        type: 3}
-      propertyPath: ShapeModule.length
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 2178518426224195056, guid: 1c5f027add3c2864489272339b4a5ded,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4192,6 +4187,11 @@ PrefabInstance:
       propertyPath: playerController
       value: 
       objectReference: {fileID: 488820021}
+    - target: {fileID: 3194309011897462934, guid: 1c5f027add3c2864489272339b4a5ded,
+        type: 3}
+      propertyPath: ShapeModule.length
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c5f027add3c2864489272339b4a5ded, type: 3}
 --- !u!1001 &2119958133
