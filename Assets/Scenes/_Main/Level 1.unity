@@ -2968,7 +2968,7 @@ PrefabInstance:
     - target: {fileID: 4604899076742034530, guid: 7251ca24d56531d428c61cc6f26bdebf,
         type: 3}
       propertyPath: nextScene
-      value: Level Scarabee
+      value: Level 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7251ca24d56531d428c61cc6f26bdebf, type: 3}
