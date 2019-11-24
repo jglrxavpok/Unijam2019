@@ -51,7 +51,7 @@ public class MaledictionController : MonoBehaviour {
         }
         if (monster) {
             monster.transform.GetChild(0).gameObject.SetActive(true); //On affiche le monstre
-            monster.GetComponent<MonsterMovementBehavior>()
+            monster.transform.GetChild(0).GetComponent<MonsterMovementBehavior>()
                 .InitPositions(500); //nombre de frames durant lesquelles le monstre est immobile
         } else {
             Debug.Log("Référence à monster non définie dans le MaledictionController");

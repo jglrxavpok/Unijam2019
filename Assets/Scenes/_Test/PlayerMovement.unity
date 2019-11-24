@@ -1432,7 +1432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac45f4ef17b2582448954868eaab6803, type: 3}
---- !u!1001 &3194309011469673230
+--- !u!1001 &786875321412700884
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1442,12 +1442,12 @@ PrefabInstance:
     - target: {fileID: 2178518424782574110, guid: 1c5f027add3c2864489272339b4a5ded,
         type: 3}
       propertyPath: m_Name
-      value: Monster
+      value: Monster_particules
       objectReference: {fileID: 0}
     - target: {fileID: 2178518424782574106, guid: 1c5f027add3c2864489272339b4a5ded,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.42
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2178518424782574106, guid: 1c5f027add3c2864489272339b4a5ded,
         type: 3}
@@ -1457,7 +1457,7 @@ PrefabInstance:
     - target: {fileID: 2178518424782574106, guid: 1c5f027add3c2864489272339b4a5ded,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.95
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2178518424782574106, guid: 1c5f027add3c2864489272339b4a5ded,
         type: 3}
@@ -1499,7 +1499,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2178518424782574105, guid: 1c5f027add3c2864489272339b4a5ded,
+    - target: {fileID: 2178518426224195059, guid: 1c5f027add3c2864489272339b4a5ded,
         type: 3}
       propertyPath: playerController
       value: 

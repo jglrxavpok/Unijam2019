@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.UNetWeaver;
 using UnityEngine;
 
 public class MonsterMovementBehavior : MonoBehaviour {
@@ -20,11 +18,6 @@ public class MonsterMovementBehavior : MonoBehaviour {
     private GameObject player;
 
     public ParticleSystem particules;
-    private int letParticlesBeFinish = 5;
-    private int durationParticles = 0;
-    private bool beginParticles = false;
-    public bool begin = true;
-    private bool dashAfterParticles = false;
 
     private bool following = false;
     private Vector3 startPosition;
@@ -34,6 +27,9 @@ public class MonsterMovementBehavior : MonoBehaviour {
     public float lerpSpeed = 0.25f;
     public float distanceThreshold = 0.01f;
 
+    AudioSource source;
+    public AudioClip audioClip;
+
     // Start is called before the first frame update
     void Start() {
         player = playerController.gameObject;
@@ -42,6 +38,8 @@ public class MonsterMovementBehavior : MonoBehaviour {
         target = player.transform.position;
         
         playerPositions.Clear();
+
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -53,7 +51,6 @@ public class MonsterMovementBehavior : MonoBehaviour {
         int nPositionsPerFrame = 6;
         Vector2 last = playerPositions.FindLast(x => true);
         float deltaDistance = (last - currentPlayerPosition2D).magnitude;
-        Debug.Log(deltaDistance+" - "+distanceThreshold);
         if (deltaDistance > distanceThreshold) { // on ajoute les nouvelles positions que si le joueur a bougé
             playerPositions.Add(currentPlayerPosition2D);
             for (int i = 0; i < nPositionsPerFrame-1; i++) {
@@ -78,13 +75,19 @@ public class MonsterMovementBehavior : MonoBehaviour {
         }
 
         int speed = 4;
-        if (dashAfterParticles) { // dash start
+        if (!wasDashing &&  playerController.isDashing()) { // dash start
+            source.clip = audioClip;
+            source.Play();
             int aim = (int)(nPositionsPerFrame*catchup*60) /* rattrape "catchup" secondes dès le début du dash */;
             if (aim < 0) {
                 aim = 0;
             }
 
-            dashAfterParticles = false;
+            if (particules) {
+                particules.Stop();
+                particules.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+                particules.Play();
+            }
 
             if (aim > 0) {
                 playerPositions.RemoveRange(0, Math.Min(aim, playerPositions.Count-1));
@@ -107,32 +110,7 @@ public class MonsterMovementBehavior : MonoBehaviour {
             // change l'angle que si on est pas à la même position qu'avant
             transform.rotation = Quaternion.LookRotation(deltaPosition, Vector3.up);
         }
-        
-        if (begin) {
-            begin = false;
-            particules.Stop();
-        }
 
-        if (!wasDashing &&  playerController.isDashing()) {
-            particules.Play();
-            dashAfterParticles = true;
-            Debug.Log("play");
-        }
-
-        if (wasDashing) {
-            if (!beginParticles) {
-                beginParticles = true;
-            }
-            else {
-                durationParticles++;
-                if (durationParticles > letParticlesBeFinish) {
-                    particules.Stop();
-                    beginParticles = false;
-                    Debug.Log("stop");
-                    durationParticles = 0;
-                }
-            }
-        }
         wasDashing = playerController.isDashing();
     }
 
