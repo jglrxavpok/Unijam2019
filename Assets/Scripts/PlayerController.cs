@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour {
     private float _xAxisInput;
     private float _yAxisInput;
     private const float DeadZoneAxis = 0.1f;
+
+    public bool isPushing = false;
     
 // Update is called once per frame 
     void Update() {
@@ -43,5 +45,15 @@ public class PlayerController : MonoBehaviour {
 
     public bool IsMoving() {
         return _isMoving;
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        isPushing = true;
+    }
+     
+    public void OnCollisionExit(Collision collision)
+    {
+        isPushing = false;
     }
 }
