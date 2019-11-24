@@ -75,7 +75,7 @@ MonoBehaviour:
   frameLagCount: 600
   speedThreshold: 0.5
   particules: {fileID: 0}
-  lerpSpeed: 0.25
+  lerpSpeed: 0.5
   distanceThreshold: 0.05
   audioClip: {fileID: 8300000, guid: fd84724d89447e3448cded9bf608273c, type: 3}
 --- !u!54 &444625420
@@ -202,16 +202,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: monstre@T-Pose
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 99e53c55aae86ff42b2aea67867c5971,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: c5db5885081a91743b62664d1a5c4d3e, type: 2}
-    - target: {fileID: -6057140222963153312, guid: 99e53c55aae86ff42b2aea67867c5971,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 99e53c55aae86ff42b2aea67867c5971,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -281,6 +271,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 99e53c55aae86ff42b2aea67867c5971,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c5db5885081a91743b62664d1a5c4d3e, type: 2}
+    - target: {fileID: -6057140222963153312, guid: 99e53c55aae86ff42b2aea67867c5971,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2927792998606800557, guid: 99e53c55aae86ff42b2aea67867c5971,
         type: 3}

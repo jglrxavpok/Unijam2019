@@ -1246,6 +1246,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 3.4
       objectReference: {fileID: 0}
+    - target: {fileID: 2178518426224195056, guid: 1c5f027add3c2864489272339b4a5ded,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2178518426224195056, guid: 1c5f027add3c2864489272339b4a5ded,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2178518426224195059, guid: 1c5f027add3c2864489272339b4a5ded,
         type: 3}
       propertyPath: playerController
@@ -1519,7 +1529,7 @@ PrefabInstance:
     - target: {fileID: 4604899076742034543, guid: 7251ca24d56531d428c61cc6f26bdebf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.2
+      value: 23.2
       objectReference: {fileID: 0}
     - target: {fileID: 4604899076742034543, guid: 7251ca24d56531d428c61cc6f26bdebf,
         type: 3}
@@ -1529,7 +1539,7 @@ PrefabInstance:
     - target: {fileID: 4604899076742034543, guid: 7251ca24d56531d428c61cc6f26bdebf,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.8
+      value: 11.1
       objectReference: {fileID: 0}
     - target: {fileID: 4604899076742034543, guid: 7251ca24d56531d428c61cc6f26bdebf,
         type: 3}
