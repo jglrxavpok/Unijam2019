@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Victory : MonoBehaviour
 {
@@ -20,5 +21,10 @@ public class Victory : MonoBehaviour
     {
         player.transform.Translate(new Vector3(0, 0, 1) * Time.deltaTime);
         textPos.localPosition = textPos.localPosition + new Vector3(0, 75, 0) * Time.deltaTime;
+
+        if (Input.GetKeyDown("escape"))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 }
