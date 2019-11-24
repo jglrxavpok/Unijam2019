@@ -49,11 +49,17 @@ public class PlayerController : MonoBehaviour {
 
     public void OnCollisionEnter(Collision collision)
     {
-        isPushing = true;
+        if (collision.gameObject.CompareTag("Box"))
+        {
+            isPushing = true;
+        }
     }
      
     public void OnCollisionExit(Collision collision)
     {
-        isPushing = false;
+        if (collision.gameObject.CompareTag("Box"))
+        {
+            isPushing = false;
+        }
     }
 }
