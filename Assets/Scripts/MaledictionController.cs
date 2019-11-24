@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,17 +12,7 @@ public class MaledictionController : MonoBehaviour {
     public AudioSource monsterSource;
     public AudioClip monsterSound;
 
-    private bool _alreadyTriggered = false; //Etre maudit une fois, c'est suffisant
-    // Start is called before the first frame update
-    void Start() {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private bool _alreadyTriggered; //Etre maudit une fois, c'est suffisant
 
     private void OnTriggerEnter(Collider other) {
         if (!other.CompareTag("Player") || _alreadyTriggered) return;
@@ -59,11 +48,11 @@ public class MaledictionController : MonoBehaviour {
             Debug.Log("Référence à monster non définie dans le MaledictionController");
         }
 
-        StartCoroutine(clearText()); //On supprime l'affichage du message après 5s
+        StartCoroutine(ClearText()); //On supprime l'affichage du message après 5s
         
     }
 
-    private IEnumerator clearText() {
+    private IEnumerator ClearText() {
         yield return new WaitForSeconds(5); //Après 5s
         if(monster)
             monster.GetComponent<CapsuleCollider>().enabled = true;//On autorise le GameOver

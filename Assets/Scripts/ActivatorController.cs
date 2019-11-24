@@ -31,7 +31,7 @@ public class ActivatorController : Activable {
     private MeshRenderer _meshRenderer;
     private AudioSource _source;
     private bool _active = false;
-    private int number_on_plate = 0;
+    public int _nbObjetsQuiMOntActive= 0;
 
     // Start is called before the first frame update
     void Start() {
@@ -66,7 +66,11 @@ public class ActivatorController : Activable {
     }
     
     private void OnTriggerEnter(Collider other) {
-        if ((other.CompareTag("Player") || other.CompareTag("Box")) && !_active && !locked) {
+        if (other.CompareTag("Player") || other.CompareTag("Box")){
+            ++_nbObjetsQuiMOntActive;
+            Debug.Log("Touché par "+other.tag);
+            if(_nbObjetsQuiMOntActive>1) return;
+            if(_active || locked) return;
             _active = true;
             foreach (var activable in activables) {
                 activable.Activate();
@@ -80,32 +84,10 @@ public class ActivatorController : Activable {
         }
     }
 
-    private void OnCollisionEnter(Collision other) {
-        if ((other.collider.CompareTag("Player") || other.collider.CompareTag("Box")) && !_active && !locked) {
-            _active = true;
-            foreach (var activable in activables) {
-                activable.Activate();
-            }
-            transform.Translate(0.05f * Vector3.down);
-            if(activeMaterial && !locked)
-                _meshRenderer.material = activeMaterial;
-            if (activateSound) {
-                _source.PlayOneShot(activateSound, 0.5f);
-            }
-        }
-    }
-
     private void OnTriggerExit(Collider other) {
         if (other.CompareTag("Player")|| other.CompareTag("Box")) {
-            if (activeDuration > 0) {
-                StartCoroutine(ResetActive());
-            }
-        }
-    }
-
-    private void OnCollisionExit(Collision other) {
-        if (other.collider.CompareTag("Player") || other.collider.CompareTag("Box")) {
-            if (activeDuration > 0) {
+            --_nbObjetsQuiMOntActive;
+            if (activeDuration > 0 && _nbObjetsQuiMOntActive == 0) {
                 StartCoroutine(ResetActive());
             }
         }

@@ -1,14 +1,8 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SarcophageController : Activable {
     private bool _onMove;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -28,6 +22,5 @@ public class SarcophageController : Activable {
         _onMove = false;
     }
     public override void DeActivate() {
-        return;
     }
 }
