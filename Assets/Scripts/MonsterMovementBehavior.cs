@@ -27,6 +27,9 @@ public class MonsterMovementBehavior : MonoBehaviour {
     public float lerpSpeed = 0.25f;
     public float distanceThreshold = 0.01f;
 
+    AudioSource source;
+    public AudioClip audioClip;
+
     // Start is called before the first frame update
     void Start() {
         player = playerController.gameObject;
@@ -35,6 +38,8 @@ public class MonsterMovementBehavior : MonoBehaviour {
         target = player.transform.position;
         
         playerPositions.Clear();
+
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -71,6 +76,8 @@ public class MonsterMovementBehavior : MonoBehaviour {
 
         int speed = 4;
         if (!wasDashing &&  playerController.isDashing()) { // dash start
+            source.clip = audioClip;
+            source.Play();
             int aim = (int)(nPositionsPerFrame*catchup*60) /* rattrape "catchup" secondes dès le début du dash */;
             if (aim < 0) {
                 aim = 0;
