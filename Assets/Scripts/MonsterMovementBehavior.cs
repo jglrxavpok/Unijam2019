@@ -75,7 +75,7 @@ public class MonsterMovementBehavior : MonoBehaviour {
         }
 
         int speed = 4;
-        if (!wasDashing &&  playerController.isDashing()) { // dash start
+        if (!wasDashing &&  playerController.IsDashing()) { // dash start
             source.clip = audioClip;
             source.Play();
             int aim = (int)(nPositionsPerFrame*catchup*60) /* rattrape "catchup" secondes dès le début du dash */;
@@ -111,7 +111,7 @@ public class MonsterMovementBehavior : MonoBehaviour {
             transform.rotation = Quaternion.LookRotation(deltaPosition, Vector3.up);
         }
 
-        wasDashing = playerController.isDashing();
+        wasDashing = playerController.IsDashing();
     }
 
     public void InitPositions(int loadSize) {

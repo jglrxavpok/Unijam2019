@@ -6,7 +6,7 @@ public class PlayerAnimation : MonoBehaviour {
     public Animator animator;
 
     public void Update() {
-        animator.SetBool("Dashing", controller.isDashing());
-        animator.SetBool("Moving", controller.isDashing() || controller.isMoving());
+        animator.SetBool("Dashing", controller.IsDashing());
+        animator.SetBool("Moving", controller.IsDashing() || controller.IsMoving());
     }
 }
