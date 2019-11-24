@@ -2264,6 +2264,11 @@ PrefabInstance:
       propertyPath: activators
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2409732388942433979, guid: 741b6a9b52902a6459aa223571d6d88e,
+        type: 3}
+      propertyPath: activeUntilMove
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2409732388942433976, guid: 741b6a9b52902a6459aa223571d6d88e,
         type: 3}
       propertyPath: m_Size.z
@@ -2888,7 +2893,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5987b1672d934114dbf5497a1c5dd468, type: 2}
+  - {fileID: 2100000, guid: 3cd58e396a15a974cabf5ec83cad9063, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

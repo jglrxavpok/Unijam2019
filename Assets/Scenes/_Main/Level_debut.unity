@@ -1927,16 +1927,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2409732388942433979, guid: 2392041ea1116934f9ebe6b8158721bd,
-        type: 3}
-      propertyPath: deplacement
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2409732388942433979, guid: 2392041ea1116934f9ebe6b8158721bd,
-        type: 3}
-      propertyPath: invertDirection
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2409732388942433983, guid: 2392041ea1116934f9ebe6b8158721bd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2012,6 +2002,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5d0c8270a2cbe6140bd3b4402c157c33, type: 2}
+    - target: {fileID: 2409732388942433979, guid: 2392041ea1116934f9ebe6b8158721bd,
+        type: 3}
+      propertyPath: deplacement
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2409732388942433979, guid: 2392041ea1116934f9ebe6b8158721bd,
+        type: 3}
+      propertyPath: invertDirection
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2409732388942433976, guid: 2392041ea1116934f9ebe6b8158721bd,
         type: 3}
       propertyPath: m_Size.z
@@ -2545,6 +2545,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5353056261627865183, guid: 896aff1aefc9bb84692d44bc41a3cf0d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2044630403661402578, guid: 896aff1aefc9bb84692d44bc41a3cf0d,
         type: 3}
       propertyPath: m_Name
@@ -2603,11 +2608,6 @@ PrefabInstance:
     - target: {fileID: 3027726664133338049, guid: 896aff1aefc9bb84692d44bc41a3cf0d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5353056261627865183, guid: 896aff1aefc9bb84692d44bc41a3cf0d,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2840,8 +2840,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 4.9, y: 0}
+  m_SizeDelta: {x: 779.5, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1425255459
 MonoBehaviour:
@@ -2862,19 +2862,20 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0a8f1e06244a1484faf6a0438afb5ba7, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "<Ins\xE9rer une m\xE9ldiction ici>"
+  m_Text: "En ouvrant ce sarcophage, la mal\xE9diction d'Anubis s'abbat sur vous,\nLe
+    gardien du temple est d\xE9j\xE0 sur vos traces!"
 --- !u!222 &1425255460
 CanvasRenderer:
   m_ObjectHideFlags: 0
