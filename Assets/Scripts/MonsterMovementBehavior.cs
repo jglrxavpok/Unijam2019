@@ -115,6 +115,7 @@ public class MonsterMovementBehavior : MonoBehaviour {
     }
 
     public void InitPositions(int loadSize) {
+        player = playerController.gameObject;
         startPosition = transform.position;
         target = player.transform.position;
         
