@@ -1081,6 +1081,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 28
       objectReference: {fileID: 0}
+    - target: {fileID: 9099370433719335635, guid: d004f2e2f38de5b42869a8f9a75a1851,
+        type: 3}
+      propertyPath: monsterSource
+      value: 
+      objectReference: {fileID: 1396717546}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d004f2e2f38de5b42869a8f9a75a1851, type: 3}
 --- !u!1001 &374872086

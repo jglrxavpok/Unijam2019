@@ -17,6 +17,10 @@ public class PlayerController : MonoBehaviour {
     private bool shiftClick = false;
     private int timer = 0;
     private bool moving;
+
+    public AudioSource monsterSource;
+    public AudioClip monsterClip;
+
 // Start is called before the first frame update 
     void Start() {
         player = gameObject;
@@ -72,7 +76,9 @@ public class PlayerController : MonoBehaviour {
             if (!shiftClick) { 
                 shiftClick = true; 
                 deplacementDroit *= dashSpeedMultiplier; 
-                deplacementDiag = Mathf.Sqrt((Mathf.Pow(deplacementDroit,2f))/2); 
+                deplacementDiag = Mathf.Sqrt((Mathf.Pow(deplacementDroit,2f))/2);
+                monsterSource.clip = monsterClip;
+                monsterSource.Play();
             } 
         } 
         if (shiftClick ) { 

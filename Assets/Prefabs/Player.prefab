@@ -75,6 +75,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashDuration: 6
   dashSpeedMultiplier: 5
+  monsterSource: {fileID: 0}
+  monsterClip: {fileID: 8300000, guid: fd84724d89447e3448cded9bf608273c, type: 3}
 --- !u!114 &9099370433719335646
 MonoBehaviour:
   m_ObjectHideFlags: 0

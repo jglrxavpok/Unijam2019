@@ -911,6 +911,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 603230119}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &603230121 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8841002616813829904, guid: 20dea41b1af6ffb45a31aebb9225c77a,
+    type: 3}
+  m_PrefabInstance: {fileID: 603230119}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &677385118
 GameObject:
   m_ObjectHideFlags: 0
@@ -2569,6 +2575,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -25.79
       objectReference: {fileID: 0}
+    - target: {fileID: 4268781310200645511, guid: d004f2e2f38de5b42869a8f9a75a1851,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268781310200645511, guid: d004f2e2f38de5b42869a8f9a75a1851,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268781310200645511, guid: d004f2e2f38de5b42869a8f9a75a1851,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 466628563005456851, guid: d004f2e2f38de5b42869a8f9a75a1851,
         type: 3}
       propertyPath: m_Size.y
@@ -2589,21 +2610,11 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.0007901191
       objectReference: {fileID: 0}
-    - target: {fileID: 4268781310200645511, guid: d004f2e2f38de5b42869a8f9a75a1851,
+    - target: {fileID: 9099370433719335635, guid: d004f2e2f38de5b42869a8f9a75a1851,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268781310200645511, guid: d004f2e2f38de5b42869a8f9a75a1851,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268781310200645511, guid: d004f2e2f38de5b42869a8f9a75a1851,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 18
-      objectReference: {fileID: 0}
+      propertyPath: monsterSource
+      value: 
+      objectReference: {fileID: 603230121}
     - target: {fileID: 1161959750042058757, guid: d004f2e2f38de5b42869a8f9a75a1851,
         type: 3}
       propertyPath: m_Name
