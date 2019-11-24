@@ -68,6 +68,24 @@ public class PlayerController : MonoBehaviour {
 
     private void FixedUpdate() {
         moving = false;
+        if (Input.GetKeyDown(KeyCode.LeftShift)) { 
+            if (!shiftClick) { 
+                shiftClick = true; 
+                deplacementDroit *= dashSpeedMultiplier; 
+                deplacementDiag = Mathf.Sqrt((Mathf.Pow(deplacementDroit,2f))/2); 
+            } 
+        } 
+        if (shiftClick ) { 
+            if (timer == dashDuration) { 
+                deplacementDroit = deplacementDroit/dashSpeedMultiplier;
+                deplacementDiag = Mathf.Sqrt((Mathf.Pow(deplacementDroit,2f))/2); 
+                timer = 0; 
+                shiftClick = false; 
+            } 
+            else { 
+                timer++; 
+            } 
+        }
         if (RightLeftUpDown[0]) 
         { 
             if (RightLeftUpDown[2]) {
@@ -121,24 +139,7 @@ public class PlayerController : MonoBehaviour {
             player.transform.rotation = Quaternion.AngleAxis(180, new Vector3(0,1,0)); 
             body.MovePosition(body.position + new Vector3(0,0,-deplacementDroit)); 
         } 
-        if (Input.GetKeyDown(KeyCode.LeftShift)) { 
-            if (!shiftClick) { 
-                shiftClick = true; 
-                deplacementDroit *= dashSpeedMultiplier; 
-                deplacementDiag = Mathf.Sqrt((Mathf.Pow(deplacementDroit,2f))/2); 
-            } 
-        } 
-        if (shiftClick ) { 
-            if (timer == dashDuration) { 
-                deplacementDroit = deplacementDroit/dashSpeedMultiplier;
-                deplacementDiag = Mathf.Sqrt((Mathf.Pow(deplacementDroit,2f))/2); 
-                timer = 0; 
-                shiftClick = false; 
-            } 
-            else { 
-                timer++; 
-            } 
-        } 
+         
     }
 
     public bool isDashing() {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.UNetWeaver;
 using UnityEngine;
 
 public class MonsterMovementBehavior : MonoBehaviour {
@@ -17,6 +18,13 @@ public class MonsterMovementBehavior : MonoBehaviour {
     
     private bool wasDashing;
     private GameObject player;
+
+    public ParticleSystem particules;
+    private int letParticlesBeFinish = 5;
+    private int durationParticles = 0;
+    private bool beginParticles = false;
+    public bool begin = true;
+    private bool dashAfterParticles = false;
 
     private bool following = false;
     private Vector3 startPosition;
@@ -70,18 +78,20 @@ public class MonsterMovementBehavior : MonoBehaviour {
         }
 
         int speed = 4;
-        if (!wasDashing && playerController.isDashing()) { // dash start
+        if (dashAfterParticles) { // dash start
             int aim = (int)(nPositionsPerFrame*catchup*60) /* rattrape "catchup" secondes dès le début du dash */;
             if (aim < 0) {
                 aim = 0;
             }
+
+            dashAfterParticles = false;
 
             if (aim > 0) {
                 playerPositions.RemoveRange(0, Math.Min(aim, playerPositions.Count-1));
             }
         }
 
-        wasDashing = playerController.isDashing();
+       
 
         if (playerPositions.Count == 0) {
             Debug.LogError("Plus de positions disponibles!");
@@ -97,6 +107,33 @@ public class MonsterMovementBehavior : MonoBehaviour {
             // change l'angle que si on est pas à la même position qu'avant
             transform.rotation = Quaternion.LookRotation(deltaPosition, Vector3.up);
         }
+        
+        if (begin) {
+            begin = false;
+            particules.Stop();
+        }
+
+        if (!wasDashing &&  playerController.isDashing()) {
+            particules.Play();
+            dashAfterParticles = true;
+            Debug.Log("play");
+        }
+
+        if (wasDashing) {
+            if (!beginParticles) {
+                beginParticles = true;
+            }
+            else {
+                durationParticles++;
+                if (durationParticles > letParticlesBeFinish) {
+                    particules.Stop();
+                    beginParticles = false;
+                    Debug.Log("stop");
+                    durationParticles = 0;
+                }
+            }
+        }
+        wasDashing = playerController.isDashing();
     }
 
     public void InitPositions(int loadSize) {
